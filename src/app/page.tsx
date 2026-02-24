@@ -69,20 +69,7 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Subtitle */}
-        <p
-          style={{
-            fontFamily: '"neue-haas-grotesk-display", sans-serif',
-            fontSize: "12px",
-            fontWeight: 400,
-            letterSpacing: "4px",
-            textTransform: "uppercase",
-            color: "#FFFFFF",
-            margin: 0,
-          }}
-        >
-          ARCHITECTURE | INTERIOR DESIGN | URBAN PLANNING
-        </p>
+{/* Tagline is part of the logo image */}
       </div>
     </div>
   );
