@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import MobileNav from "./MobileNav";
 
 const navItems = [
   { href: "/", label: "Welcome" },
@@ -16,196 +18,155 @@ const navItems = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const pathname = usePathname();
 
+  // Handle scroll effects with direction awareness
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY.current;
+      
+      // Update glass effect
+      setScrolled(currentScrollY > 50);
+      
+      // Show/hide header based on scroll direction
+      if (currentScrollY < 100) {
+        // Always show near top
+        setHeaderVisible(true);
+      } else if (scrollingDown && currentScrollY > 150) {
+        // Hide when scrolling down past threshold
+        setHeaderVisible(false);
+      } else if (!scrollingDown) {
+        // Show when scrolling up
+        setHeaderVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledScroll, { passive: true });
+    return () => window.removeEventListener("scroll", throttledScroll);
   }, []);
 
   return (
-    <header
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        background: "transparent",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "90%",
-          margin: "0 auto",
-          padding: "24px 0",
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-        }}
-      >
-        {/* Logo */}
-        <Link href="/" aria-label="Infinite Architects - Home">
-          <Image
-            src="/images/logo-white.png"
-            alt="Infinite Architects"
-            width={200}
-            height={119}
-            priority
-            style={{ 
-              maxWidth: isMobile ? "90px" : "200px", 
-              height: "auto" 
-            }}
-          />
-        </Link>
-
-        {/* Desktop Navigation */}
-        {!isMobile && (
-          <nav
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "24px",
-              marginBottom: "8px",
-            }}
-            aria-label="Main navigation"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{
-                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: "1px",
-                  fontSize: "14px",
-                  color: pathname === item.href ? "#80AE50" : "#FFFFFF",
-                  textDecoration: "none",
-                  transition: "color 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = "#80AE50";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color =
-                    pathname === item.href ? "#80AE50" : "#FFFFFF";
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
+          // Glass effect when scrolled
+          scrolled 
+            ? "backdrop-blur-xl bg-infinite-gray-950/80 border-b border-white/10 shadow-glass" 
+            : "bg-transparent",
+          // Show/hide based on scroll direction
+          headerVisible 
+            ? "translate-y-0" 
+            : "-translate-y-full"
         )}
+      >
+        <div className="container mx-auto px-6 lg:px-8 flex items-center justify-between py-4 lg:py-6">
+          {/* Logo */}
+          <Link 
+            href="/" 
+            className="z-10 group transition-transform duration-300 hover:scale-105"
+            aria-label="Infinite Architects - Home"
+          >
+            <Image
+              src="/images/logo-white.png"
+              alt="Infinite Architects"
+              width={200}
+              height={119}
+              priority
+              className="h-auto w-auto max-w-[100px] md:max-w-[140px] lg:max-w-[180px] transition-all duration-300 group-hover:brightness-110"
+            />
+          </Link>
 
-        {/* Mobile Menu Toggle */}
-        {isMobile && (
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1" aria-label="Main navigation">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "group relative px-4 py-3 font-display font-light text-sm uppercase tracking-wider transition-all duration-300 rounded-lg",
+                    "hover:bg-white/5 hover:backdrop-blur-sm",
+                    isActive
+                      ? "text-infinite-green-500 bg-infinite-green-500/5"
+                      : "text-white/90 hover:text-white"
+                  )}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  
+                  {/* Active indicator */}
+                  <span
+                    className={cn(
+                      "absolute bottom-1 left-1/2 h-0.5 bg-infinite-green-500 transition-all duration-300 rounded-full",
+                      "-translate-x-1/2",
+                      isActive 
+                        ? "w-6 opacity-100" 
+                        : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-70"
+                    )}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Mobile Menu Button */}
           <button
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-              padding: "8px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-            }}
+            className={cn(
+              "lg:hidden relative z-10 flex flex-col justify-center w-10 h-10 transition-all duration-300",
+              "focus:outline-none focus:ring-2 focus:ring-infinite-green-500/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg",
+              "hover:bg-white/5 hover:scale-105"
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Toggle mobile menu"
             aria-expanded={mobileMenuOpen}
           >
             <span
-              style={{
-                display: "block",
-                width: "24px",
-                height: "2px",
-                background: "#FFFFFF",
-                transition: "transform 0.3s",
-                transform: mobileMenuOpen
-                  ? "rotate(45deg) translateY(8px)"
-                  : "none",
-              }}
+              className={cn(
+                "block h-0.5 w-6 bg-white transition-all duration-300 origin-center mx-auto",
+                mobileMenuOpen && "rotate-45 translate-y-1.5"
+              )}
             />
             <span
-              style={{
-                display: "block",
-                width: "24px",
-                height: "2px",
-                background: "#FFFFFF",
-                transition: "opacity 0.3s",
-                opacity: mobileMenuOpen ? 0 : 1,
-              }}
+              className={cn(
+                "block h-0.5 w-6 bg-white transition-all duration-300 my-1.5 mx-auto",
+                mobileMenuOpen && "opacity-0 scale-0"
+              )}
             />
             <span
-              style={{
-                display: "block",
-                width: "24px",
-                height: "2px",
-                background: "#FFFFFF",
-                transition: "transform 0.3s",
-                transform: mobileMenuOpen
-                  ? "rotate(-45deg) translateY(-8px)"
-                  : "none",
-              }}
+              className={cn(
+                "block h-0.5 w-6 bg-white transition-all duration-300 origin-center mx-auto",
+                mobileMenuOpen && "-rotate-45 -translate-y-1.5"
+              )}
             />
           </button>
-        )}
-      </div>
+        </div>
+      </header>
 
       {/* Mobile Navigation */}
-      {isMobile && mobileMenuOpen && (
-        <nav
-          style={{
-            margin: "0 5%",
-          }}
-          aria-label="Mobile navigation"
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              borderRadius: "10px",
-              overflow: "hidden",
-              background: "#FFFFFF",
-            }}
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                style={{
-                  padding: "12px 16px",
-                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontWeight: 500,
-                  fontSize: "1rem",
-                  color: "#000000",
-                  textDecoration: "none",
-                  background:
-                    pathname === item.href ? "#80AE50" : "transparent",
-                  transition: "background 0.3s",
-                }}
-                onMouseEnter={(e) => {
-                  if (pathname !== item.href) {
-                    e.currentTarget.style.background = "#ECFFD8";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (pathname !== item.href) {
-                    e.currentTarget.style.background = "transparent";
-                  }
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </nav>
-      )}
-    </header>
+      <MobileNav
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        navItems={navItems}
+      />
+    </>
   );
 }

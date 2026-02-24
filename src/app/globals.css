@@ -1,44 +1,78 @@
 @import url("https://use.typekit.net/diu1zgo.css");
 
 @tailwind base;
-@tailwind components;
+@tailwind components; 
 @tailwind utilities;
 
+/* ===== CSS Custom Properties - 2026 Design System ===== */
 :root {
+  /* Brand Colors */
   --color-green: #80ae50;
-  --color-dark: #303030;
-  --color-darker: #000000;
+  --color-green-rgb: 128, 174, 80;
+  --color-green-dark: #6a9340;
+  
+  /* Rich Dark Palette */
+  --color-black: #101214;
+  --color-dark: #2d3338;
+  --color-darker: #1a1d20;
   --color-muted: #65615f;
   --color-muted-light: #919191;
-  --color-error: #dd3333;
+  --color-error: #dc3545;
+  
+  /* Glass Morphism */
+  --glass-light: rgba(255, 255, 255, 0.1);
+  --glass-medium: rgba(255, 255, 255, 0.15);
+  --glass-dark: rgba(0, 0, 0, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border-green: rgba(128, 174, 80, 0.3);
+  
+  /* Shadows */
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-glass-lg: 0 16px 64px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-green: 0 8px 32px rgba(128, 174, 80, 0.15);
+  
+  /* Fluid Spacing */
+  --space-fluid-xs: clamp(0.5rem, 2vw, 1rem);
+  --space-fluid-sm: clamp(1rem, 3vw, 2rem);
+  --space-fluid-md: clamp(2rem, 5vw, 4rem);
+  --space-fluid-lg: clamp(3rem, 8vw, 6rem);
+  --space-fluid-xl: clamp(4rem, 10vw, 8rem);
 }
 
 /* ===== Base Styles ===== */
 html {
-  background-color: #000;
   scroll-behavior: smooth;
+  background-color: var(--color-black);
 }
 
 body {
   font-family: "neue-haas-grotesk-display", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
   font-weight: 300;
-  color: #fff;
-  background-color: #000;
+  color: #ffffff;
+  background-color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* ===== Scrollbar Styling ===== */
-/* Firefox */
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Modern Scrollbar ===== */
 * {
-  scrollbar-width: auto;
-  scrollbar-color: #80ae50 #303030;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-green) transparent;
 }
 
-/* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -46,188 +80,342 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #80ae50;
-  border-radius: 10px;
-  border: 3px solid #303030;
+  background: var(--color-green);
+  border-radius: 4px;
 }
 
-/* ===== Typography ===== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-dark);
+}
+
+/* ===== Typography System ===== */
+h1, h2, h3, h4, h5, h6 {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 200;
   line-height: 1.2;
+  color: #ffffff;
 }
 
-/* ===== Container Width Override ===== */
-.width-90 {
-  max-width: 90% !important;
-  margin-left: auto;
-  margin-right: auto;
+/* ===== Focus Styles for A11y ===== */
+:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
 }
 
-/* ===== Green Accent Text ===== */
-.text-accent {
-  color: #80ae50;
-}
-
-/* ===== Links ===== */
+/* ===== Link Styles ===== */
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-  color: #80ae50;
+  color: var(--color-green);
 }
 
-/* ===== Animation Delays ===== */
-.delay-100 {
-  animation-delay: 100ms;
-}
-.delay-200 {
-  animation-delay: 200ms;
-}
-.delay-300 {
-  animation-delay: 300ms;
-}
-.delay-500 {
-  animation-delay: 500ms;
-}
-.delay-700 {
-  animation-delay: 700ms;
+/* ===== Utilities Layer ===== */
+@layer utilities {
+  /* Container Utilities */
+  .container-90 {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container-85 {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Glass Morphism Utilities */
+  .glass-panel {
+    background: var(--glass-medium);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-card {
+    background: var(--glass-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card-green {
+    background: rgba(var(--color-green-rgb), 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border-green);
+    box-shadow: var(--shadow-green);
+  }
+
+  .glass-card-dark {
+    background: var(--glass-dark);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Text Utilities */
+  .text-accent {
+    color: var(--color-green);
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .text-muted-light {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glass-lg);
+  }
+
+  .hover-magnetic {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  .hover-magnetic:hover {
+    transform: scale(1.02);
+  }
+
+  /* Image Effects */
+  .image-reveal {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+  }
+
+  .image-reveal:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  /* Button Base */
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    min-height: 44px; /* Touch-friendly */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    background: transparent;
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-green);
+    color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-green);
+  }
+
+  .btn-glass {
+    background: var(--glass-medium);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    color: #ffffff;
+  }
+
+  .btn-glass:hover {
+    background: var(--glass-light);
+    border-color: var(--color-green);
+    color: var(--color-green);
+    transform: translateY(-2px);
+  }
+
+  /* Grid Utilities */
+  .grid-portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+  }
+
+  .grid-bento {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    grid-auto-rows: 250px;
+  }
+
+  .grid-bento > :nth-child(3n+1) {
+    grid-row-end: span 2;
+  }
+
+  /* Animation Utilities */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-green) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-/* ===== Page Transitions ===== */
-.page-enter {
-  opacity: 0;
+/* ===== Component Layer ===== */
+@layer components {
+  /* Preloader */
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  .preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .preloader-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-green) 0%, #ffffff 100%);
+    transition: width 100ms linear;
+    z-index: 10000;
+  }
+
+  /* Page Transitions */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 70%,
+      var(--color-black) 100%
+    );
+  }
+
+  /* Portfolio Grid Layouts */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0;
+  }
+
+  .portfolio-grid-spaced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Team Grid */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-grid-featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
 }
 
-.page-enter-active {
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-/* ===== Preloader Styles ===== */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 1s ease, visibility 1s ease;
-}
-
-.preloader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.preloader .progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background-color: #dd3333;
-  transition: width 10ms linear;
-}
-
-.preloader .progress-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #919191;
-}
-
-/* ===== Card Styles ===== */
-.glass-card {
-  background: rgba(48, 48, 48, 0.3);
-  border: 1px solid rgba(128, 174, 80, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-/* ===== Button Styles ===== */
-.btn-primary {
-  background-color: transparent;
-  border: 1px solid #80ae50;
-  color: #80ae50;
-  padding: 12px 32px;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #80ae50;
-  color: #000;
-}
-
-/* ===== Grid Layout ===== */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-
+/* ===== Responsive Overrides ===== */
 @media (max-width: 1024px) {
   .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-bento {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 767px) {
-  .portfolio-grid {
+  .portfolio-grid,
+  .grid-bento {
     grid-template-columns: 1fr;
   }
-}
 
-/* ===== Team Grid ===== */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.team-grid-small {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 767px) {
-  .team-grid,
-  .team-grid-small {
-    grid-template-columns: 1fr;
+  .hero-section {
+    background-attachment: scroll; /* Better mobile performance */
   }
-}
 
-/* ===== Hero Section ===== */
-.hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-}
+  /* Improve touch targets on mobile */
+  .btn-base {
+    min-height: 48px;
+    padding: 1rem 1.5rem;
+  }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  /* Adjust fluid spacing for mobile */
+  :root {
+    --space-fluid-xs: 0.5rem;
+    --space-fluid-sm: 1rem;
+    --space-fluid-md: 1.5rem;
+    --space-fluid-lg: 2rem;
+    --space-fluid-xl: 2.5rem;
+  }
 }
