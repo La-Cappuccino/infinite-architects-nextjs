@@ -5,6 +5,12 @@ import Link from "next/link";
 import { AnimatedSection, FadeUp, ScaleIn, Reveal } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 
+interface ContactItem {
+  label: string;
+  value: string;
+  href?: string;
+}
+
 const contactInfo = [
   {
     title: "Get In Touch",
@@ -17,7 +23,7 @@ const contactInfo = [
       { label: "Phone", value: "+971 4 3636306", href: "tel:+97143636306" },
       { label: "Russell", value: "russell@infinitedesigners.co", href: "mailto:russell@infinitedesigners.co" },
       { label: "Helen", value: "helen@infinitedesigners.co", href: "mailto:helen@infinitedesigners.co" },
-    ]
+    ] as ContactItem[]
   },
   {
     title: "Visit Us",
@@ -32,7 +38,7 @@ const contactInfo = [
       { label: "", value: "Tower AA1, Jumeirah Lake Towers" },
       { label: "", value: "Dubai, United Arab Emirates" },
       { label: "PO Box", value: "63 43 56" },
-    ]
+    ] as ContactItem[]
   },
   {
     title: "Office Hours",
@@ -46,7 +52,7 @@ const contactInfo = [
       { label: "Friday", value: "8:00 AM - 12:00 PM" },
       { label: "Saturday", value: "Closed" },
       { label: "Consultations", value: "By Appointment" },
-    ]
+    ] as ContactItem[]
   }
 ];
 
