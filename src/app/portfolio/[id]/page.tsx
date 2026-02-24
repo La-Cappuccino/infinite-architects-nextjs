@@ -117,6 +117,7 @@ interface ProjectPageProps {
 
 export default function ProjectPage({ params }: ProjectPageProps) {
   const [scrollY, setScrollY] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   
   const project = projectsData[params.id];
