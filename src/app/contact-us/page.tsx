@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AnimatedSection, FadeUp, ScaleIn, Reveal } from "@/components/ui/AnimatedSection";
+import { FadeUp, ScaleIn, Reveal } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 
 interface ContactItem {
@@ -122,7 +122,7 @@ export default function ContactPage() {
     setIsSubmitting(false);
     
     // Show success message (you could implement a toast here)
-    alert("Thank you for your message! We'll get back to you soon.");
+    alert("Thank you for your message! We&apos;ll get back to you soon.");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -144,7 +144,7 @@ export default function ContactPage() {
           </FadeUp>
           <FadeUp delay={400}>
             <p className="text-heading-sm text-infinite-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
-              Ready to transform your vision into reality? Let's collaborate to create 
+              Ready to transform your vision into reality? Let&apos;s collaborate to create 
               exceptional spaces that inspire and elevate the human experience.
             </p>
           </FadeUp>

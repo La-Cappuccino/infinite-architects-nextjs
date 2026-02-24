@@ -6,10 +6,37 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AnimatedSection, FadeUp, ScaleIn } from "@/components/ui/AnimatedSection";
 import PortfolioCard from "@/components/ui/PortfolioCard";
-import { cn } from "@/lib/utils";
+
+// Type definitions for project data
+interface ProjectAward {
+  title: string;
+  organization: string;
+}
+
+interface ProjectData {
+  id: string;
+  title: string;
+  location: string;
+  category: string[];
+  year: string;
+  area: string;
+  client: string;
+  status: string;
+  description: string;
+  longDescription: string;
+  features: string[];
+  hero: string;
+  images: string[];
+  awards?: ProjectAward[];
+  testimonial?: {
+    text: string;
+    author: string;
+    role: string;
+  };
+}
 
 // Project data (in a real app, this would come from a database or CMS)
-const projectsData: Record<string, any> = {
+const projectsData: Record<string, ProjectData> = {
   "private-villa-emirates-hills": {
     id: "private-villa-emirates-hills",
     title: "Private Villa Emirates Hills",
@@ -90,7 +117,6 @@ interface ProjectPageProps {
 
 export default function ProjectPage({ params }: ProjectPageProps) {
   const [scrollY, setScrollY] = useState(0);
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
   
   const project = projectsData[params.id];
@@ -324,7 +350,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {project.awards.map((award: any, index: number) => (
+                {project.awards.map((award: ProjectAward, index: number) => (
                   <ScaleIn key={index} delay={200 * index}>
                     <div className="glass-card p-8 rounded-2xl text-center">
                       <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-infinite-green-500/20 flex items-center justify-center">

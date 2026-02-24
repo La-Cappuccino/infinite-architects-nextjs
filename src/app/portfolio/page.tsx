@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import PortfolioCard from "@/components/ui/PortfolioCard";
 import { FadeUp, AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
@@ -254,7 +255,7 @@ export default function PortfolioPage() {
               Ready to create your dream space?
             </h2>
             <p className="text-body-md text-white/70 mb-8 max-w-2xl mx-auto">
-              Let's discuss your vision and bring your architectural dreams to life with our award-winning design team.
+              Let&apos;s discuss your vision and bring your architectural dreams to life with our award-winning design team.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="primary" size="lg" asChild>

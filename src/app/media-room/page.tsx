@@ -197,7 +197,7 @@ export default function MediaRoomPage() {
               }}
             >
               <p style={{ marginBottom: "15px" }}>
-                The brief was to capture the spirit of 1960's 'swinging London'.
+                The brief was to capture the spirit of 1960&apos;s &lsquo;swinging London&rsquo;.
                 Taking inspiration from the radical art, fashion, film and music
                 scenes that flourished during this period, generating new ideas
                 and creating a youth phenomenon that strongly emphasized the new
@@ -207,7 +207,7 @@ export default function MediaRoomPage() {
               </p>
 
               <p style={{ marginBottom: "15px" }}>
-                Infinite's design concept reconsidered the typical hotel
+                Infinite&apos;s design concept reconsidered the typical hotel
                 guestroom configuration to deliver a revolutionary guest
                 experience through a contemporary interpretation of the sixties
                 counterculture that questioned the political, social and moral
@@ -237,11 +237,11 @@ export default function MediaRoomPage() {
 
               <p style={{ marginBottom: "15px" }}>
                 The design, the functionality and the experience of the room are
-                complimented harnessing today's new media and technologies, with
+                complimented harnessing today&apos;s new media and technologies, with
                 fully integrated in-room operating systems all controlled from
-                the guest's smart phone. The aim is to create a living
+                the guest&apos;s smart phone. The aim is to create a living
                 environment that exudes ease-of-use and exceeds the expectations
-                of today's discerning guest.
+                of today&apos;s discerning guest.
               </p>
 
               <p>

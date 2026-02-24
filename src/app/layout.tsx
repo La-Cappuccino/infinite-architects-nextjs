@@ -99,7 +99,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://use.typekit.net" />
       </head>
-      <body className="bg-black text-white font-sans antialiased selection:bg-infinite-green-500/20 selection:text-infinite-green-500">
+      <body className="font-sans antialiased" style={{
+        backgroundColor: 'var(--color-black)',
+        color: '#ffffff'
+      }}>
         {/* Page transition overlay */}
         <div 
           id="page-transition" 

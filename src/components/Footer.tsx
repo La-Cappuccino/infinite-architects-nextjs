@@ -122,7 +122,7 @@ export default function Footer() {
               Ready to create something extraordinary?
             </h3>
             <p className="text-white/70 text-sm mb-6">
-              Let's discuss your vision and bring your architectural dreams to life.
+              Let&apos;s discuss your vision and bring your architectural dreams to life.
             </p>
             <Button variant="primary" size="lg" asChild>
               <Link href="/contact-us">

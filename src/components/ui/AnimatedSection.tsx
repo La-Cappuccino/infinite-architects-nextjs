@@ -22,13 +22,20 @@ export function AnimatedSection({
   triggerOnce = true,
   disabled = false,
 }: AnimatedSectionProps) {
-  const [isInView, setIsInView] = useState(false);
+  // Check reduced motion and disabled state during initialization
+  const [isInView, setIsInView] = useState(() => {
+    if (disabled) return true;
+    if (typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      return mediaQuery.matches;
+    }
+    return false;
+  });
   const [hasTriggered, setHasTriggered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (disabled) {
-      setIsInView(true);
       return;
     }
 
@@ -57,14 +64,6 @@ export function AnimatedSection({
       }
     };
   }, [delay, threshold, triggerOnce, hasTriggered, disabled]);
-
-  // Respect reduced motion preference
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mediaQuery.matches) {
-      setIsInView(true);
-    }
-  }, []);
 
   const getAnimationClasses = () => {
     const baseClasses = "transition-all duration-1000 ease-out";

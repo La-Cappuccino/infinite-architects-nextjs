@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatedSection, FadeUp, ScaleIn, Reveal } from "@/components/ui/AnimatedSection";
+import { FadeUp, ScaleIn, Reveal } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -111,7 +111,7 @@ export default function AboutPage() {
             <div className="relative aspect-square overflow-hidden group">
               <Image
                 src="/images/team/russell.jpg"
-                alt="Russell - Co-founder"
+                alt="Russell, Co-founder and Principal Architect of Infinite Architects, in professional headshot"
                 fill
                 className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -128,7 +128,7 @@ export default function AboutPage() {
             <div className="relative aspect-square overflow-hidden group">
               <Image
                 src="/images/team/helen.jpg"
-                alt="Helen - Co-founder"
+                alt="Helen, Co-founder and Principal Interior Designer of Infinite Architects, in professional headshot"
                 fill
                 className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -157,13 +157,13 @@ export default function AboutPage() {
                   that his chosen career would be Architecture.
                 </p>
                 <p>
-                  With his 25 years' experience he has delivered a wide range of landmark and 
+                  With his 25 years&apos; experience he has delivered a wide range of landmark and 
                   award winning projects ranging from industrial, residential, retail, commercial 
                   and high end hospitality for clients from Africa, Asia, Europe and the Middle East.
                 </p>
                 <p>
-                  Russell's passion is sailing and he has taken part in many world class races 
-                  including 'Fastnet', 'Cowes Regatta', Cape Town to Rio and Cape Town to St. Helena.
+                  Russell&apos;s passion is sailing and he has taken part in many world class races 
+                  including &lsquo;Fastnet&rsquo;, &lsquo;Cowes Regatta&rsquo;, Cape Town to Rio and Cape Town to St. Helena.
                 </p>
               </div>
             </div>
@@ -179,14 +179,14 @@ export default function AboutPage() {
                   America & The Sultanate of Oman, finally settling in Dubai in 1998.
                 </p>
                 <p>
-                  She has accumulated over 25 years' experience in the Hospitality Design industry. 
+                  She has accumulated over 25 years&apos; experience in the Hospitality Design industry. 
                   During this time, she has earned a reputation as a dynamic, multi-disciplined 
                   award-winning designer.
                 </p>
                 <p>
                   Her work has given her an insight into diverse cultures of the world and a 
                   love of travel that inspires her creativity. Helen believes that being sensitive 
-                  to the Client's needs, matched with an impeccable eye for detail wins every time.
+                  to the Client&apos;s needs, matched with an impeccable eye for detail wins every time.
                 </p>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function AboutPage() {
               Ready to Start Your <span className="text-infinite-green-500">Project?</span>
             </h2>
             <p className="text-infinite-gray-300 text-body-lg mb-8 max-w-2xl mx-auto">
-              Let's collaborate to create exceptional spaces that inspire and transform. 
+              Let&apos;s collaborate to create exceptional spaces that inspire and transform. 
               Our team is ready to bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

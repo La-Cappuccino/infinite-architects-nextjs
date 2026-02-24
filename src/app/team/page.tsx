@@ -10,7 +10,7 @@ const founders = [
     name: "Russell",
     role: "Co-founder & Principal Architect",
     image: "/images/team/russell.jpg",
-    bio: "has always been inspired by the combination of the tangible and the intangible, a fascination that continues to this day. With 25+ years of experience, he has delivered landmark and award-winning projects across Africa, Asia, Europe and the Middle East. Russell's passion for sailing has taken him to world-class races including Fastnet and Cowes Regatta.",
+    bio: "has always been inspired by the combination of the tangible and the intangible, a fascination that continues to this day. With 25+ years of experience, he has delivered landmark and award-winning projects across Africa, Asia, Europe and the Middle East. Russell&apos;s passion for sailing has taken him to world-class races including Fastnet and Cowes Regatta.",
     social: {
       email: "russell@infinitedesigners.co",
       linkedin: "https://linkedin.com/in/russell-infinite"
@@ -189,8 +189,8 @@ export default function TeamPage() {
               Join Our <span className="text-infinite-green-500">Journey</span>
             </h2>
             <p className="text-infinite-gray-300 text-body-lg mb-8 max-w-2xl mx-auto">
-              We're always looking for talented individuals who share our passion 
-              for exceptional design and innovation. Let's create something amazing together.
+              We&apos;re always looking for talented individuals who share our passion 
+              for exceptional design and innovation. Let&apos;s create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

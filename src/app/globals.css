@@ -56,6 +56,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Selection styles */
+::selection {
+  background-color: rgba(var(--color-green-rgb), 0.2);
+  color: var(--color-green);
+}
+
+::-moz-selection {
+  background-color: rgba(var(--color-green-rgb), 0.2);
+  color: var(--color-green);
+}
+
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -100,6 +111,32 @@ h1, h2, h3, h4, h5, h6 {
 :focus-visible {
   outline: 2px solid var(--color-green);
   outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enhanced focus for buttons and interactive elements */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(128, 174, 80, 0.2);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-green: #90c960;
+    --glass-border: rgba(255, 255, 255, 0.4);
+  }
+  
+  .text-muted {
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .text-muted-light {
+    color: rgba(255, 255, 255, 0.85);
+  }
 }
 
 /* ===== Link Styles ===== */
@@ -165,11 +202,15 @@ a:hover {
   }
 
   .text-muted {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8); /* Improved from 0.7 for better contrast */
   }
 
   .text-muted-light {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65); /* Improved from 0.5 for better contrast */
+  }
+
+  .text-accessible {
+    color: rgba(255, 255, 255, 0.9); /* High contrast for accessibility */
   }
 
   /* Hover Effects */
@@ -236,6 +277,11 @@ a:hover {
     box-shadow: var(--shadow-green);
   }
 
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--color-green);
+    outline-offset: 2px;
+  }
+
   .btn-glass {
     background: var(--glass-medium);
     backdrop-filter: blur(16px);
@@ -248,6 +294,11 @@ a:hover {
     border-color: var(--color-green);
     color: var(--color-green);
     transform: translateY(-2px);
+  }
+
+  .btn-glass:focus-visible {
+    outline: 2px solid var(--color-green);
+    outline-offset: 2px;
   }
 
   /* Grid Utilities */

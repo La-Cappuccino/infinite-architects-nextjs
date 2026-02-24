@@ -69,7 +69,7 @@ export default function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
           // Glass effect when scrolled
           scrolled 
-            ? "backdrop-blur-xl bg-infinite-gray-950/80 border-b border-white/10 shadow-glass" 
+            ? "glass-panel" 
             : "bg-transparent",
           // Show/hide based on scroll direction
           headerVisible 
@@ -107,7 +107,7 @@ export default function Header() {
                     "group relative px-4 py-3 font-display font-light text-sm uppercase tracking-wider transition-all duration-300 rounded-lg",
                     "hover:bg-white/5 hover:backdrop-blur-sm",
                     isActive
-                      ? "text-infinite-green-500 bg-infinite-green-500/5"
+                      ? "text-accent bg-[var(--glass-light)]"
                       : "text-white/90 hover:text-white"
                   )}
                 >
@@ -116,12 +116,13 @@ export default function Header() {
                   {/* Active indicator */}
                   <span
                     className={cn(
-                      "absolute bottom-1 left-1/2 h-0.5 bg-infinite-green-500 transition-all duration-300 rounded-full",
+                      "absolute bottom-1 left-1/2 h-0.5 transition-all duration-300 rounded-full",
                       "-translate-x-1/2",
                       isActive 
                         ? "w-6 opacity-100" 
                         : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-70"
                     )}
+                    style={{ backgroundColor: 'var(--color-green)' }}
                   />
                 </Link>
               );
@@ -132,7 +133,7 @@ export default function Header() {
           <button
             className={cn(
               "lg:hidden relative z-10 flex flex-col justify-center w-10 h-10 transition-all duration-300",
-              "focus:outline-none focus:ring-2 focus:ring-infinite-green-500/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg",
+              "focus:outline-none focus:ring-2 focus:ring-[var(--color-green)]/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg",
               "hover:bg-white/5 hover:scale-105"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

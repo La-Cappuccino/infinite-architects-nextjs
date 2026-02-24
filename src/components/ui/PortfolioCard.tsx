@@ -74,7 +74,7 @@ export default function PortfolioCard({
 
   const typography = getTypographySizes();
 
-  const CardContent = () => (
+  const cardContent = (
     <div 
       className={cn(
         "group relative w-full h-full overflow-hidden bg-infinite-gray-900 rounded-2xl",
@@ -102,7 +102,7 @@ export default function PortfolioCard({
         {/* Main Image */}
         <Image
           src={image}
-          alt={title}
+          alt={`${title} - ${category} project by Infinite Architects`}
           fill
           className={cn(
             "object-cover transition-all duration-700 ease-out",
@@ -267,11 +267,15 @@ export default function PortfolioCard({
   // If href is provided, wrap in Link, otherwise just return the card
   if (href) {
     return (
-      <Link href={href} className="block w-full h-full">
-        <CardContent />
+      <Link 
+        href={href} 
+        className="block w-full h-full focus:outline-none focus:ring-2 focus:ring-infinite-green-500 focus:ring-offset-2 focus:ring-offset-infinite-gray-950 rounded-2xl"
+        aria-label={`View ${title} project details`}
+      >
+        {cardContent}
       </Link>
     );
   }
 
-  return <CardContent />;
+  return cardContent;
 }

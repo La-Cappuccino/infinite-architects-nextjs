@@ -1,18 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { FadeUp, Reveal } from "@/components/ui/AnimatedSection";
 import Link from "next/link";
 
 export default function HomePage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Animation delay for content
-    const timer = setTimeout(() => setIsLoaded(true), 800);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <section className="hero-section">
@@ -75,7 +65,11 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <FadeUp delay={1000}>
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div 
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+            role="img"
+            aria-label="Scroll down to see more content"
+          >
             <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse" />
             </div>
@@ -86,9 +80,16 @@ export default function HomePage() {
       {/* Achievement badges */}
       <div className="absolute bottom-8 right-8 hidden lg:block">
         <FadeUp delay={1200}>
-          <div className="glass-card p-4 rounded-xl">
+          <div 
+            className="glass-card p-4 rounded-xl"
+            role="region"
+            aria-label="Company achievements"
+          >
             <div className="text-center">
-              <div className="text-2xl font-display font-light text-infinite-green-500 mb-1">
+              <div 
+                className="text-2xl font-display font-light text-infinite-green-500 mb-1"
+                aria-label="50 plus award winning projects"
+              >
                 50+
               </div>
               <div className="text-xs text-white/70 uppercase tracking-wider">
