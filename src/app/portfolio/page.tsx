@@ -1,273 +1,152 @@
 "use client";
 
-import { useState } from "react";
-
-import PortfolioCard from "@/components/ui/PortfolioCard";
-import { FadeUp, AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Button } from "@/components/ui/Button";
+import Image from "next/image";
+import PageLayout from "@/components/PageLayout";
 
 const projects = [
   {
-    id: "private-villa-emirates-hills",
-    title: "Private Villa Emirates Hills",
-    category: "Architecture & Interior Design",
-    location: "Dubai",
+    title: "Private Villa Emirates Hills, Dubai",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-01.jpg",
-    featured: true,
-    description: "Luxurious contemporary villa showcasing seamless indoor-outdoor living with premium finishes.",
-    year: "2024",
-    type: "architecture",
   },
   {
-    id: "modular-hotel-concept",
-    title: "Modular Hotel Concept",
-    category: "Architecture & Interior Design",
-    location: "Saudi Arabia",
+    title: "Modular Hotel Concept, Saudi Arabia",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-02.jpg",
-    description: "Innovative modular design approach for sustainable hospitality architecture.",
-    year: "2024",
-    type: "architecture",
   },
   {
-    id: "private-villa-emirates-hills-2",
-    title: "Private Villa Emirates Hills II",
-    category: "Interior Design",
-    location: "Dubai",
+    title: "Private Villa Emirates Hills, Dubai",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-03.webp",
-    description: "Elegant interior spaces combining modern minimalism with Arabian luxury.",
-    year: "2023",
-    type: "interior",
   },
   {
-    id: "urban-hotel-dubai",
-    title: "Urban Hotel",
-    category: "Interior Design",
-    location: "Dubai",
+    title: "Urban Hotel, Dubai",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-04.jpg",
-    featured: true,
-    description: "Contemporary hotel interiors designed for the modern traveler.",
-    year: "2023",
-    type: "interior",
   },
   {
-    id: "private-villa-district-one",
-    title: "Private Villa District One",
-    category: "Architecture & Interior Design",
-    location: "Dubai",
+    title: "Private Villa District One, Dubai",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-05.webp",
-    description: "Award-winning residential design featuring sustainable architecture principles.",
-    year: "2023",
-    type: "architecture",
   },
   {
-    id: "private-villa-nad-al-sheba",
-    title: "Private Villa Nad Al Sheba",
-    category: "Architecture & Interior Design",
-    location: "Dubai",
+    title: "Private Villa Nad Al Sheba, Dubai",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-06.jpg",
-    description: "Modern villa design with traditional Middle Eastern influences.",
-    year: "2022",
-    type: "architecture",
   },
   {
-    id: "private-villa-dubai-hills",
-    title: "Private Villa Dubai Hills",
-    category: "Interior Design",
-    location: "Dubai",
+    title: "Private Villa Dubai Hills - Award Winning",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-07.jpg",
-    featured: true,
-    description: "Award-winning interior design featuring bespoke furniture and lighting solutions.",
-    year: "2022",
-    type: "interior",
   },
   {
-    id: "tamoka-restaurant",
     title: "Tamoka Restaurant Concept",
-    category: "Architecture & Interior Design Competition",
-    location: "Concept",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-08.jpg",
-    description: "Competition-winning restaurant design merging culture with contemporary dining.",
-    year: "2022",
-    type: "concept",
   },
   {
-    id: "private-villa-jumeirah-golf",
-    title: "Private Villa Jumeirah Golf",
-    category: "Architecture & Interior Design",
-    location: "Dubai",
+    title: "Private Villa, Jumeirah Golf Estates, Dubai",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-09.jpg",
-    description: "Golf course villa with panoramic views and entertainment spaces.",
-    year: "2021",
-    type: "architecture",
   },
   {
-    id: "al-bahya-palm-resort",
-    title: "Al Bahya Palm Resort",
-    category: "Architecture & Interior Design",
-    location: "Abu Dhabi",
+    title: "Al Bahya Palm Resort, Abu Dhabi",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-10.jpg",
-    description: "Luxury resort complex inspired by traditional Arabian architecture.",
-    year: "2021",
-    type: "architecture",
   },
   {
-    id: "private-villa-refurbishment",
-    title: "Private Villa Refurbishment",
-    category: "Interior Design",
-    location: "Emirates Hills, Dubai",
+    title: "Private Villa Refurbishment Emirates Hills, Dubai",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-11.jpg",
-    description: "Complete renovation of luxury villa interiors with modern amenities.",
-    year: "2021",
-    type: "interior",
   },
   {
-    id: "creek-park-boutique",
-    title: "Creek Park Boutique Hotel",
-    category: "Architecture & Interior Design",
-    location: "Dubai",
+    title: "Creek Park Boutique Hotel & Serviced Apartments",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-12.jpg",
-    description: "Boutique hotel and serviced apartments with contemporary urban design.",
-    year: "2020",
-    type: "architecture",
   },
-];
-
-const categories = [
-  { id: "all", label: "All Projects" },
-  { id: "architecture", label: "Architecture" },
-  { id: "interior", label: "Interior Design" },
-  { id: "concept", label: "Concepts" },
 ];
 
 export default function PortfolioPage() {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const filteredProjects = projects.filter((project) =>
-    activeFilter === "all" ? true : project.type === activeFilter
-  );
-
   return (
-    <div className="min-h-screen bg-infinite-gray-950 pt-24 pb-16">
-      {/* Hero Section */}
-      <section className="container-90 py-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <FadeUp>
-            <h1 className="font-display font-extralight text-display-md text-white mb-6">
-              Our <span className="text-infinite-green-500">Portfolio</span>
-            </h1>
-          </FadeUp>
-          <FadeUp delay={200}>
-            <p className="text-body-lg text-white/70 max-w-2xl mx-auto">
-              Discover our award-winning projects spanning luxury residential,
-              commercial spaces, and innovative architectural concepts across the Middle East.
-            </p>
-          </FadeUp>
-        </div>
-      </section>
+    <PageLayout>
+      <div style={{ backgroundColor: "#000000" }}>
+        {/* Portfolio Grid - 3 Columns, No Gaps */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "0",
+          }}
+        >
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              style={{
+                position: "relative",
+                aspectRatio: "4/3",
+                overflow: "hidden",
+                cursor: "pointer",
+              }}
+              className="portfolio-item"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                style={{
+                  objectFit: "cover",
+                  filter: "grayscale(100%)",
+                  transition: "filter 0.3s ease, transform 0.3s ease",
+                }}
+                sizes="33vw"
+              />
 
-      {/* Filter Navigation */}
-      <section className="container-90 mb-12">
-        <FadeUp delay={400}>
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={activeFilter === category.id ? "primary" : "outline"}
-                onClick={() => setActiveFilter(category.id)}
-                className="mb-2"
+              {/* Overlay with title */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  padding: "15px",
+                  zIndex: 2,
+                }}
               >
-                {category.label}
-              </Button>
-            ))}
-          </div>
-        </FadeUp>
-      </section>
-
-      {/* Portfolio Grid */}
-      <section className="container-90">
-        {/* Featured Projects - Bento Style */}
-        {activeFilter === "all" && (
-          <div className="mb-16">
-            <FadeUp delay={600}>
-              <h2 className="font-display font-light text-heading-lg text-white mb-8 text-center">
-                Featured Projects
-              </h2>
-            </FadeUp>
-            <div className="grid-bento mb-8">
-              {projects
-                .filter((project) => project.featured)
-                .map((project, index) => (
-                  <AnimatedSection
-                    key={project.id}
-                    delay={700 + index * 100}
-                    animation="scale-in"
-                  >
-                    <PortfolioCard
-                      title={project.title}
-                      category={project.category}
-                      image={project.image}
-                      href={`/portfolio/${project.id}`}
-                      description={project.description}
-                      featured={true}
-                    />
-                  </AnimatedSection>
-                ))}
+                <h3
+                  style={{
+                    fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                    fontSize: "15px",
+                    fontWeight: 300,
+                    color: "#FFFFFF",
+                    marginBottom: "5px",
+                  }}
+                >
+                  {project.title}
+                </h3>
+                <span
+                  style={{
+                    fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                    fontSize: "11px",
+                    fontWeight: 400,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    color: "#80AE50",
+                  }}
+                >
+                  {project.category}
+                </span>
+              </div>
             </div>
-          </div>
-        )}
-
-        {/* All Projects Grid */}
-        <div>
-          {activeFilter === "all" && (
-            <FadeUp delay={800}>
-              <h2 className="font-display font-light text-heading-lg text-white mb-8 text-center">
-                All Projects
-              </h2>
-            </FadeUp>
-          )}
-          
-          <div className="portfolio-grid-spaced">
-            {filteredProjects.map((project, index) => (
-              <AnimatedSection
-                key={project.id}
-                delay={activeFilter === "all" ? 900 + index * 50 : index * 100}
-                animation="fade-up"
-              >
-                <PortfolioCard
-                  title={project.title}
-                  category={project.category}
-                  image={project.image}
-                  href={`/portfolio/${project.id}`}
-                  description={project.description}
-                  featured={false}
-                />
-              </AnimatedSection>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="container-90 py-16 text-center">
-        <FadeUp delay={1000}>
-          <div className="glass-card p-8 md:p-12 rounded-3xl max-w-4xl mx-auto">
-            <h2 className="font-display font-light text-heading-lg text-white mb-4">
-              Ready to create your dream space?
-            </h2>
-            <p className="text-body-md text-white/70 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss your vision and bring your architectural dreams to life with our award-winning design team.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="primary" size="lg" asChild>
-                <a href="/contact-us">Start Your Project</a>
-              </Button>
-              <Button variant="ghost" size="lg" asChild>
-                <a href="/about">Learn About Us</a>
-              </Button>
-            </div>
-          </div>
-        </FadeUp>
-      </section>
-    </div>
+        {/* Hover effect styles */}
+        <style jsx global>{`
+          .portfolio-item:hover img {
+            filter: grayscale(0%) !important;
+            transform: scale(1.05);
+          }
+        `}</style>
+      </div>
+    </PageLayout>
   );
 }

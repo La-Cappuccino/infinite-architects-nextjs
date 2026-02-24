@@ -1,104 +1,89 @@
-import { Button } from "@/components/ui/Button";
-import { FadeUp, Reveal } from "@/components/ui/AnimatedSection";
-import Link from "next/link";
+"use client";
+
+import Image from "next/image";
 
 export default function HomePage() {
-
   return (
-    <section className="hero-section">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+    <div
+      style={{
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "#000000",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Video/Image */}
+      <div
         style={{
-          backgroundImage: `url('/images/hero/infinite-designers-001.webp')`,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
         }}
-      />
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.3,
+          }}
+        >
+          <source
+            src="https://infinitedesigners.com/wp-content/uploads/Infinite-Video-New-Site-3.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
 
-      {/* Modern gradient overlay */}
-      <div className="hero-overlay" />
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-        {/* Main Title */}
-        <Reveal delay={0}>
-          <h1 className="font-display font-extralight text-display-lg text-white mb-6 leading-none">
-            Award Winning
-            <br />
-            <span className="text-gradient">Design Studio</span>
-          </h1>
-        </Reveal>
+      {/* Centered Logo and Text */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          textAlign: "center",
+        }}
+      >
+        {/* INFINITE Logo */}
+        <div style={{ marginBottom: "20px" }}>
+          <Image
+            src="/images/infinite-logo.png"
+            alt="Infinite"
+            width={500}
+            height={200}
+            style={{
+              maxWidth: "80vw",
+              height: "auto",
+            }}
+            priority
+          />
+        </div>
 
         {/* Subtitle */}
-        <FadeUp delay={400}>
-          <p className="text-body-lg text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Creating extraordinary architectural experiences that inspire, 
-            transform, and endure. Where innovation meets timeless elegance.
-          </p>
-        </FadeUp>
-
-        {/* CTA Buttons */}
-        <FadeUp delay={600}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <Button 
-              variant="primary" 
-              size="lg" 
-              className="min-w-[200px]"
-              asChild
-            >
-              <Link href="/portfolio">
-                View Our Work
-              </Link>
-            </Button>
-            
-            <Button 
-              variant="glass" 
-              size="lg" 
-              className="min-w-[200px]"
-              asChild
-            >
-              <Link href="/contact-us">
-                Start Your Project
-              </Link>
-            </Button>
-          </div>
-        </FadeUp>
-
-        {/* Scroll indicator */}
-        <FadeUp delay={1000}>
-          <div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-            role="img"
-            aria-label="Scroll down to see more content"
-          >
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse" />
-            </div>
-          </div>
-        </FadeUp>
+        <p
+          style={{
+            fontFamily: '"neue-haas-grotesk-display", sans-serif',
+            fontSize: "12px",
+            fontWeight: 400,
+            letterSpacing: "4px",
+            textTransform: "uppercase",
+            color: "#FFFFFF",
+            margin: 0,
+          }}
+        >
+          ARCHITECTURE | INTERIOR DESIGN | URBAN PLANNING
+        </p>
       </div>
-
-      {/* Achievement badges */}
-      <div className="absolute bottom-8 right-8 hidden lg:block">
-        <FadeUp delay={1200}>
-          <div 
-            className="glass-card p-4 rounded-xl"
-            role="region"
-            aria-label="Company achievements"
-          >
-            <div className="text-center">
-              <div 
-                className="text-2xl font-display font-light text-infinite-green-500 mb-1"
-                aria-label="50 plus award winning projects"
-              >
-                50+
-              </div>
-              <div className="text-xs text-white/70 uppercase tracking-wider">
-                Award Winning Projects
-              </div>
-            </div>
-          </div>
-        </FadeUp>
-      </div>
-    </section>
+    </div>
   );
 }
