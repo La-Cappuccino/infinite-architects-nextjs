@@ -67,11 +67,13 @@ export default function TeamPage() {
             <div key={founder.name}>
               {/* Image */}
               <div
+                className="team-image"
                 style={{
                   position: "relative",
                   aspectRatio: "3/4",
                   marginBottom: "20px",
                   border: "1px solid rgba(128, 174, 80, 0.3)",
+                  cursor: "pointer",
                 }}
               >
                 <Image
@@ -139,11 +141,13 @@ export default function TeamPage() {
             <div key={member.name}>
               {/* Image */}
               <div
+                className="team-image"
                 style={{
                   position: "relative",
                   aspectRatio: "3/4",
                   marginBottom: "20px",
                   border: "1px solid rgba(128, 174, 80, 0.3)",
+                  cursor: "pointer",
                 }}
               >
                 <Image
@@ -187,6 +191,15 @@ export default function TeamPage() {
           ))}
         </div>
       </div>
+        {/* Hover effect styles */}
+        <style jsx global>{`
+          .team-image img {
+            transition: filter 0.5s ease !important;
+          }
+          .team-image:hover img {
+            filter: grayscale(0%) !important;
+          }
+        `}</style>
     </PageLayout>
   );
 }

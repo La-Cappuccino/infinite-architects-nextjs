@@ -115,10 +115,12 @@ export default function AboutPage() {
           {founders.map((founder) => (
             <div
               key={founder.name}
+              className="founder-image"
               style={{
                 position: "relative",
                 aspectRatio: "1/1",
                 overflow: "hidden",
+                cursor: "pointer",
               }}
             >
               <Image
@@ -128,11 +130,19 @@ export default function AboutPage() {
                 style={{
                   objectFit: "cover",
                   filter: "grayscale(100%)",
+                  transition: "filter 0.5s ease",
                 }}
               />
             </div>
           ))}
         </div>
+
+        {/* Hover effect styles */}
+        <style jsx global>{`
+          .founder-image:hover img {
+            filter: grayscale(0%) !important;
+          }
+        `}</style>
 
         {/* Green Divider */}
         <div

@@ -141,9 +141,12 @@ export default function PortfolioPage() {
 
         {/* Hover effect styles */}
         <style jsx global>{`
+          .portfolio-item img {
+            transition: filter 0.5s ease, transform 0.5s ease !important;
+          }
           .portfolio-item:hover img {
             filter: grayscale(0%) !important;
-            transform: scale(1.05);
+            transform: scale(1.02);
           }
         `}</style>
       </div>
