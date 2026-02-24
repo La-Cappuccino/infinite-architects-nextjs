@@ -46,9 +46,9 @@ export default function AboutPage() {
           <h1
             style={{
               fontFamily: '"neue-haas-grotesk-display", sans-serif',
-              fontSize: "3vw",
+              fontSize: "64px",
               fontWeight: 200,
-              letterSpacing: "0.05em",
+              letterSpacing: "0.02em",
               color: "#FFFFFF",
             }}
           >
@@ -75,27 +75,17 @@ export default function AboutPage() {
                 backgroundColor: "transparent",
               }}
             >
-              <h3
-                style={{
-                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "14px",
-                  fontWeight: 300,
-                  color: "#80AE50",
-                  marginBottom: "15px",
-                }}
-              >
-                {value.title}
-              </h3>
               <p
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "13px",
-                  fontWeight: 300,
-                  color: "rgba(255,255,255,0.7)",
+                  fontSize: "16px",
+                  fontWeight: 100,
+                  color: "rgba(255,255,255,0.8)",
                   lineHeight: 1.8,
                   margin: 0,
                 }}
               >
+                <span style={{ color: "#80AE50" }}>{value.title}</span>{" "}
                 {value.text}
               </p>
             </div>
@@ -137,13 +127,6 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* Hover effect styles */}
-        <style jsx global>{`
-          .founder-image:hover img {
-            filter: grayscale(0%) !important;
-          }
-        `}</style>
-
         {/* Green Divider */}
         <div
           style={{
@@ -167,10 +150,10 @@ export default function AboutPage() {
           {founders.map((founder) => (
             <div key={founder.name}>
               {/* Name with green underline */}
-              <h3
+              <h2
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "22px",
+                  fontSize: "32px",
                   fontWeight: 300,
                   color: "#80AE50",
                   paddingBottom: "15px",
@@ -179,15 +162,15 @@ export default function AboutPage() {
                 }}
               >
                 {founder.name}
-              </h3>
+              </h2>
 
               {/* Bio */}
               <div
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "13px",
-                  fontWeight: 300,
-                  color: "rgba(255,255,255,0.7)",
+                  fontSize: "16px",
+                  fontWeight: 100,
+                  color: "rgba(255,255,255,0.8)",
                   lineHeight: 1.8,
                 }}
               >
@@ -200,6 +183,13 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
+        {/* Hover effect styles */}
+        <style jsx global>{`
+          .founder-image:hover img {
+            filter: grayscale(0%) !important;
+          }
+        `}</style>
       </div>
     </PageLayout>
   );

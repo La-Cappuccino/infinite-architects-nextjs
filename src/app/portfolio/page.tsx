@@ -96,7 +96,7 @@ export default function PortfolioPage() {
                 style={{
                   objectFit: "cover",
                   filter: "grayscale(100%)",
-                  transition: "filter 0.3s ease, transform 0.3s ease",
+                  transition: "filter 0.5s ease, transform 0.5s ease",
                 }}
                 sizes="33vw"
               />
@@ -107,17 +107,17 @@ export default function PortfolioPage() {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  padding: "15px",
+                  padding: "20px",
                   zIndex: 2,
                 }}
               >
                 <h3
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "15px",
+                    fontSize: "18px",
                     fontWeight: 300,
                     color: "#FFFFFF",
-                    marginBottom: "5px",
+                    marginBottom: "8px",
                   }}
                 >
                   {project.title}
@@ -125,7 +125,7 @@ export default function PortfolioPage() {
                 <span
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "11px",
+                    fontSize: "12px",
                     fontWeight: 400,
                     letterSpacing: "1px",
                     textTransform: "uppercase",

@@ -43,9 +43,9 @@ export default function TeamPage() {
           <h1
             style={{
               fontFamily: '"neue-haas-grotesk-display", sans-serif',
-              fontSize: "3vw",
+              fontSize: "64px",
               fontWeight: 200,
-              letterSpacing: "0.05em",
+              letterSpacing: "0.02em",
               color: "#FFFFFF",
             }}
           >
@@ -88,26 +88,26 @@ export default function TeamPage() {
               </div>
 
               {/* Name */}
-              <h3
+              <h2
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "22px",
+                  fontSize: "32px",
                   fontWeight: 300,
                   color: "#80AE50",
                   margin: "0 0 15px 0",
                 }}
               >
                 {founder.name}
-              </h3>
+              </h2>
 
               {/* Bio */}
               <p
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "13px",
-                  fontWeight: 300,
-                  color: "rgba(255,255,255,0.7)",
-                  lineHeight: 1.7,
+                  fontSize: "16px",
+                  fontWeight: 100,
+                  color: "rgba(255,255,255,0.8)",
+                  lineHeight: 1.8,
                   margin: 0,
                 }}
               >
@@ -165,7 +165,7 @@ export default function TeamPage() {
               <h3
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "20px",
+                  fontSize: "24px",
                   fontWeight: 300,
                   color: "#80AE50",
                   margin: "0 0 12px 0",
@@ -178,10 +178,10 @@ export default function TeamPage() {
               <p
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "12px",
-                  fontWeight: 300,
-                  color: "rgba(255,255,255,0.7)",
-                  lineHeight: 1.7,
+                  fontSize: "15px",
+                  fontWeight: 100,
+                  color: "rgba(255,255,255,0.8)",
+                  lineHeight: 1.8,
                   margin: 0,
                 }}
               >
@@ -190,7 +190,7 @@ export default function TeamPage() {
             </div>
           ))}
         </div>
-      </div>
+
         {/* Hover effect styles */}
         <style jsx global>{`
           .team-image img {
@@ -200,6 +200,7 @@ export default function TeamPage() {
             filter: grayscale(0%) !important;
           }
         `}</style>
+      </div>
     </PageLayout>
   );
 }
