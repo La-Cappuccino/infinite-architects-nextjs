@@ -54,7 +54,8 @@ export default function MobileNav({ isOpen, onClose, navItems }: MobileNavProps)
   // Set mounted state for animation
   useEffect(() => {
     if (isOpen) {
-      setMounted(true);
+      // Use requestAnimationFrame to avoid setState during render
+      requestAnimationFrame(() => setMounted(true));
     } else {
       const timeout = setTimeout(() => setMounted(false), 300);
       return () => clearTimeout(timeout);
