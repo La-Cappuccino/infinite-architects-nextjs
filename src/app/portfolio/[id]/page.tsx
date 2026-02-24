@@ -308,8 +308,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             {project.images.map((image: string, index: number) => (
               <ScaleIn key={index} delay={100 * index}>
                 <div 
-                  className="relative aspect-[4/3] group cursor-pointer overflow-hidden rounded-2xl"
-                  onClick={() => setActiveImageIndex(index)}
+                  className="relative aspect-[4/3] group overflow-hidden rounded-2xl"
                 >
                   <Image
                     src={image}
