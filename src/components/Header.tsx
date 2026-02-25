@@ -1,18 +1,29 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
+  { href: "/about", label: "About" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact-us", label: "Contact" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
@@ -22,11 +33,13 @@ export default function Header() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: "#000000",
-        padding: "20px 50px",
+        backgroundColor: scrolled ? "rgba(0,0,0,0.95)" : "transparent",
+        backdropFilter: scrolled ? "blur(10px)" : "none",
+        padding: scrolled ? "15px 50px" : "25px 50px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        transition: "all 0.4s ease",
       }}
     >
       {/* Logo */}
@@ -34,15 +47,19 @@ export default function Header() {
         <Image
           src="/images/logo-white.png"
           alt="LivingEdge"
-          width={180}
-          height={48}
-          style={{ height: "48px", width: "auto" }}
+          width={160}
+          height={43}
+          style={{ 
+            height: scrolled ? "36px" : "43px", 
+            width: "auto",
+            transition: "height 0.4s ease",
+          }}
           priority
         />
       </Link>
 
       {/* Navigation */}
-      <nav style={{ display: "flex", gap: "40px" }}>
+      <nav style={{ display: "flex", gap: "45px" }}>
         {navItems.map((item) => {
           const isActive = pathname === item.href;
 
@@ -50,15 +67,18 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
+              className="line-animate"
               style={{
-                fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                fontSize: "15px",
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "12px",
                 fontWeight: 400,
-                letterSpacing: "1.5px",
+                letterSpacing: "2px",
                 color: isActive ? "#80AE50" : "#FFFFFF",
                 textDecoration: "none",
-                transition: "color 0.3s ease",
                 textTransform: "uppercase",
+                transition: "color 0.3s ease",
+                paddingBottom: "5px",
+                position: "relative",
               }}
             >
               {item.label}

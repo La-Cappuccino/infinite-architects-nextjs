@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Infinite Architects - Award Winning Design Studio - Dubai, UAE",
-    template: "%s | Infinite Architects",
+    default: "LivingEdge - Interior Design & Construction - Kampala, Uganda",
+    template: "%s | LivingEdge",
   },
   description:
-    "Award-winning architecture and interior design firm based in Dubai, UAE.",
+    "We design inspired spaces shaped by your vision. Interior Design, Construction & Furniture in Kampala, Uganda.",
 };
 
 export const viewport: Viewport = {
@@ -23,17 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en-US">
       <head>
-        <link rel="stylesheet" href="https://use.typekit.net/diu1zgo.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body
-        style={{
-          margin: 0,
-          padding: 0,
-          backgroundColor: "#000000",
-          color: "#ffffff",
-          fontFamily: '"neue-haas-grotesk-display", sans-serif',
-        }}
-      >
+      <body>
         {children}
       </body>
     </html>
