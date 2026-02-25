@@ -1,31 +1,30 @@
 {
   "site": {
-    "name": "Infinite Architects",
-    "tagline": "Architecture | Interior Design | Urban Planning",
-    "taglineLong": "Life through Design",
-    "url": "https://infinitedesigners.com",
-    "copyright": "© INFINITE ARCHITECTS 2026. ALL RIGHTS RESERVED."
+    "name": "LivingEdge",
+    "tagline": "Interior Design | Construction | Furniture",
+    "taglineLong": "Inspired Spaces, Shaped by Vision",
+    "url": "https://livingedgeworks.com",
+    "copyright": "© LIVINGEDGE 2026. ALL RIGHTS RESERVED."
   },
 
   "contact": {
-    "phone": "+971 4 3636306",
+    "phone": "+256 700 000 000",
     "emails": [
-      "russell@infinitedesigners.co",
-      "helen@infinitedesigners.co"
+      "livingedge2026@gmail.com"
     ],
     "address": {
-      "office": "Office 2601",
-      "street": "Mazaya Business Avenue",
-      "building": "Tower AA1, Jumeirah Lake Towers",
-      "city": "Dubai, United Arab Emirates",
-      "poBox": "PO Box 63 43 56"
+      "office": "Suite 1, 3rd Floor",
+      "street": "Impala House",
+      "building": "Plot 13/15 Kimathi Avenue",
+      "city": "Kampala, Uganda",
+      "poBox": "196910 Kampala GPO"
     },
     "social": {
-      "instagram": "https://www.instagram.com/infinitedubai/",
-      "facebook": "https://www.facebook.com/InfiniteDXB/",
-      "linkedin": "https://www.linkedin.com/company/infinite-dubai/"
+      "instagram": "https://www.instagram.com/livingedgeworks/",
+      "facebook": "https://www.facebook.com/livingedgeworks/",
+      "linkedin": "https://www.linkedin.com/company/livingedgeworks/"
     },
-    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.168!2d55.1416!3d25.0764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b5402c126e3%3A0xb9511e6655c46d7c!2sInfinite%20Architects%20Interior%20Design%20Urban%20Planning!5e0!3m2!1sen!2sae!4v1708700000000!5m2!1sen!2sae"
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7576!2d32.5825!3d0.3136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb0!2sKimathi%20Avenue%2C%20Kampala!5e0!3m2!1sen!2sug!4v1708700000000!5m2!1sen!2sug"
   },
 
   "navigation": [
@@ -33,198 +32,135 @@
     { "label": "About", "url": "/about" },
     { "label": "Portfolio", "url": "/portfolio" },
     { "label": "Team", "url": "/team" },
-    { "label": "Media Room", "url": "/media-room" },
     { "label": "Contact Us", "url": "/contact-us" }
   ],
 
   "homepage": {
     "hero": {
-      "title": "Infinite",
-      "subtitle": "Architecture | Interior Design | Urban Planning",
-      "videoUrl": "https://infinitedesigners.com/wp-content/uploads/Infinite-Video-New-Site-3.mp4"
+      "title": "LivingEdge",
+      "subtitle": "Interior Design | Construction | Furniture",
+      "videoUrl": null
     },
     "sections": [
       {
-        "title": "we are",
-        "text": "a boutique architecture and interior design firm made up of vibrant individuals passionate about design and the possibilities it unlocks to improve the lives of those within our society. Our core values are creativity, integrity, humility and accountability."
+        "title": "we design",
+        "text": "inspired spaces shaped by your vision, uniting architecture, function, and refined interior detail. We are a design-focused firm made up of passionate individuals committed to transforming spaces that improve the lives of those within our community."
       },
       {
         "title": "we believe",
-        "text": "through our design, Infinite is committed to enriching the lives of people by creating built environs moulded through conceptual innovation, attention to detail, technical excellence, appropriate functionality, social awareness and environmental responsibility. We believe we have a responsibility to ensure that each of our projects enrich those who experience them and their surroundings culturally, economically and socially."
+        "text": "in creating built environments moulded through conceptual innovation, attention to detail, and technical excellence. We work closely with builders, consultants, and other partners to make sure each project runs smoothly and the final build delivers well beyond our shared aspirations."
       },
       {
-        "title": "we work",
-        "text": "through a trust based collaborative approach between our clients and interdisciplinary consultants. We nurture our professional relationships but remain fluid and in so doing, encourage creativity, evolution, development and maturation. We are committed to our design but encourage research and discovery to allow it to flourish. Through this we aim to create buildings and interior spaces that excite both the senses and the intellect."
+        "title": "we deliver",
+        "text": "high-end experiences of indoor and outdoor interiors. We craft contemporary spaces focused on flow and efficiency. At every step, you remain informed, inspired, and fully involved. We embrace clean lines and subtle textures to create interiors that feel calm, functional, and timeless."
       }
     ]
   },
 
   "about": {
-    "title": "About Infinite",
+    "title": "About LivingEdge",
     "values": [
       {
-        "title": "we are...",
-        "text": "a boutique architecture and interior design firm made up of vibrant individuals passionate about design and the possibilities it unlocks to improve the lives of those within our society. Our core values are creativity, integrity, humility and accountability."
+        "title": "we design...",
+        "text": "inspired spaces shaped by your vision, uniting architecture, function, and refined interior detail. We are a design-focused firm made up of passionate individuals committed to transforming spaces that improve the lives of those within our community. Our core values are creativity, integrity, quality, and client satisfaction."
       },
       {
         "title": "we believe...",
-        "text": "through our design, Infinite is committed to enriching the lives of people by creating built environs moulded through conceptual innovation, attention to detail, technical excellence, appropriate functionality, social awareness and environmental responsibility. We believe we have a responsibility to ensure that each of our projects enrich those who experience them and their surroundings culturally, economically and socially."
+        "text": "in creating built environments moulded through conceptual innovation, attention to detail, and technical excellence. We have a responsibility to ensure that each of our projects enrich those who experience them and their surroundings culturally, economically and socially. Every project is an opportunity to exceed expectations."
       },
       {
-        "title": "we work...",
-        "text": "through a trust based collaborative approach between our clients and interdisciplinary consultants. We nurture our professional relationships but remain fluid and in so doing, encourage creativity, evolution, development and maturation. We are committed to our design but encourage research and discovery to allow it to flourish. Through this we aim to create buildings and interior spaces that excite both the senses and the intellect."
+        "title": "we deliver...",
+        "text": "through a collaborative approach between our clients and partners. We work closely with builders, consultants, and specialists to ensure each project runs smoothly. From concept to completion, we craft contemporary spaces focused on flow, efficiency, and timeless elegance. At every step, you remain informed, inspired, and fully involved."
       }
     ],
-    "founders": [
-      {
-        "name": "Russell",
-        "image": "russell.jpg",
-        "bio": "has always been inspired by the combination of the tangible and the intangible, a fascination that continues to this day. It was therefore almost inevitable that his chosen career would be Architecture. As through design, it unites the physical qualities of built form, material application, response to the environment and applicable technology with the creative arts, mathematical theories of form and proportion, human emotional response and history. This dichotomy pervades everything he does whether it is work related or social.\n\nWith his 25 years' experience he has delivered a wide range of landmark and award winning projects ranging from industrial, residential, retail, commercial and high end hospitality for clients from Africa, Asia, Europe and the Middle East. Clients include the V&A Waterfront, Old Mutual, Sew Eurodrive, Robertson and Cain, Jumeirah Group, One & Only Resorts, Southern Sun, Fairmont, Hilton, Emaar, Mediclinic, City Hospital and Diyar.\n\nRussell's passion is sailing and he has taken part in many world class races including 'Fastnet', 'Cowes Regatta', Cape Town to Rio and Cape Town to St. Helena to name but a few.\n\nHe continues sailing here at Dubai Offshore Sailing Club in his spare time on his yacht Sovereign."
-      },
-      {
-        "name": "Helen",
-        "image": "helen.jpg",
-        "bio": "has always had a passion for design. With a Scottish RAF pilot Father and Swedish Mother, she grew up moving around the world, living in the UK, America & The Sultanate of Oman, finally settling in Dubai in 1998. She attained an Interior Design degree from Napier University in Edinburgh and has accumulated over 25 years' experience in the Hospitality Design industry. During this time, she has earned a reputation as a dynamic, multi-disciplined award-winning designer. Her vast knowledge and experience of hotel design comes from years of working closely with many of the world's leading hotel operators in conjunction with many prestigious clients and project teams. Whether it be master planning, concept design, detailed coordination with other consultants or site work, Helen achieves excellence by immersing herself in all facets of the design. Her career has seen her work on a multitude of internationally recognised projects spanning Europe, South America, Africa, and the Middle East. These range from luxury hotels, bars, fine dining restaurants and private villas. Her work and interaction with people from these varied regions have given her an insight into the diverse cultures of the world and a love of travel that inspires her creativity. Helen believes that being sensitive to the Client's needs, matched with an impeccable eye for detail wins every time."
-      }
-    ]
+    "founders": []
   },
 
   "portfolio": {
     "title": "Portfolio",
     "projects": [
       {
-        "title": "Private Villa Emirates Hills, Dubai",
+        "title": "Contemporary Office Villa, Kampala",
         "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "villa-emirates-hills.jpg",
-        "slug": "private-villa-emirates-hills"
+        "image": "project-01.jpg",
+        "slug": "office-villa-kampala"
       },
       {
-        "title": "Modular Hotel Concept, Saudi Arabia",
+        "title": "Modern Residence, Kampala",
         "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "modular-hotel-saudi.jpg",
-        "slug": "modular-hotel-concept-saudi"
+        "image": "project-05.jpg",
+        "slug": "modern-residence-kampala"
       },
       {
-        "title": "Private Villa Emirates Hills, Dubai",
+        "title": "Private Estate Entry, Kampala",
+        "category": "ARCHITECTURE",
+        "image": "project-15.jpg",
+        "slug": "private-estate-entry"
+      },
+      {
+        "title": "Aerial View Estate, Kampala",
+        "category": "ARCHITECTURE",
+        "image": "project-32.jpg",
+        "slug": "aerial-estate-kampala"
+      },
+      {
+        "title": "Luxury Walk-in Closet",
+        "category": "INTERIOR DESIGN & FURNITURE",
+        "image": "project-25.jpg",
+        "slug": "luxury-closet-design"
+      },
+      {
+        "title": "Tropical Garden Estate",
+        "category": "ARCHITECTURE & LANDSCAPING",
+        "image": "project-07.jpg",
+        "slug": "tropical-garden-estate"
+      },
+      {
+        "title": "Contemporary Kitchen Design",
         "category": "INTERIOR DESIGN",
-        "image": "villa-emirates-hills-2.jpg",
-        "slug": "private-villa-emirates-hills-2"
+        "image": "project-10.jpg",
+        "slug": "contemporary-kitchen"
       },
       {
-        "title": "Urban Hotel, Dubai",
+        "title": "Private Villa Exterior",
+        "category": "ARCHITECTURE",
+        "image": "project-02.jpg",
+        "slug": "private-villa-exterior"
+      },
+      {
+        "title": "Living Space Remodel",
+        "category": "INTERIOR DESIGN & REMODELING",
+        "image": "project-18.jpg",
+        "slug": "living-space-remodel"
+      },
+      {
+        "title": "Estate Gardens, Kampala",
+        "category": "LANDSCAPING",
+        "image": "project-39.jpg",
+        "slug": "estate-gardens-kampala"
+      },
+      {
+        "title": "Modern Bathroom Suite",
         "category": "INTERIOR DESIGN",
-        "image": "urban-hotel-dubai.jpg",
-        "slug": "urban-hotel-dubai"
+        "image": "project-20.jpg",
+        "slug": "modern-bathroom-suite"
       },
       {
-        "title": "Private Villa District One, Dubai",
+        "title": "Residential Complex",
         "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "villa-district-one.jpg",
-        "slug": "private-villa-district-one"
-      },
-      {
-        "title": "Private Villa Nad Al Sheba, Dubai",
-        "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "villa-nad-al-sheba.jpg",
-        "slug": "private-villa-nad-al-sheba"
-      },
-      {
-        "title": "Private Villa Dubai Hills - Award Winning",
-        "category": "INTERIOR DESIGN",
-        "image": "villa-dubai-hills.jpg",
-        "slug": "private-villa-dubai-hills"
-      },
-      {
-        "title": "Tamoka Restaurant Concept",
-        "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "tamoka-restaurant.jpg",
-        "slug": "tamoka-restaurant"
-      },
-      {
-        "title": "Private Villa, Jumeirah Golf Estates, Dubai",
-        "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "villa-jumeirah-golf.jpg",
-        "slug": "private-villa-jumeirah-golf"
-      },
-      {
-        "title": "Al Bahya Palm Resort, Abu Dhabi",
-        "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "al-bahya-resort.jpg",
-        "slug": "al-bahya-palm-resort"
-      },
-      {
-        "title": "Private Villa Refurbishment Emirates Hills, Dubai",
-        "category": "INTERIOR DESIGN",
-        "image": "villa-refurbishment.jpg",
-        "slug": "private-villa-refurbishment"
-      },
-      {
-        "title": "Creek Park Boutique Hotel & Serviced Apartments",
-        "category": "ARCHITECTURE & INTERIOR DESIGN",
-        "image": "creek-park-hotel.jpg",
-        "slug": "creek-park-hotel"
+        "image": "project-35.jpg",
+        "slug": "residential-complex"
       }
     ]
   },
 
   "team": {
     "title": "Meet the team",
-    "founders": [
-      {
-        "name": "Russell",
-        "image": "russell.jpg",
-        "bio": "has always been inspired by the combination of the tangible and the intangible, a fascination that continues to this day. It was therefore almost inevitable that his chosen career would be Architecture. As through design, it unites the physical qualities of built form, material application, response to the environment and applicable technology with the creative"
-      },
-      {
-        "name": "Helen",
-        "image": "helen.jpg",
-        "bio": "has always had a passion for design. With a Scottish RAF pilot Father and Swedish Mother, she grew up moving around the world, living in the UK, America & The Sultanate of Oman, finally settling in Dubai in 1998. She attained an Interior Design degree from Napier University in Edinburgh and has accumulated over 25 years' experience in the"
-      }
-    ],
-    "members": [
-      {
-        "name": "Joshua",
-        "image": "joshua.jpg",
-        "bio": "inspired by the spectacular built landscape while traveling, Joshua pursued a career in architecture and became a licensed architect and a BIM practitioner. He is an alumnus of the University of San"
-      },
-      {
-        "name": "Anoop",
-        "image": "anoop.jpg",
-        "bio": "originally from India, Anoop lived and worked in Paris, Thailand and Dubai, immersing himself in each of the countries diverse cultures. he has over 25 years of experience in the hospitality design industry"
-      },
-      {
-        "name": "Farha",
-        "image": "farha.jpg",
-        "bio": "a confident, competent, and imaginative interior designer with 12 years of extensive experience working on high end hospitality and luxury residential projects. Her career has seen her work on"
-      }
-    ]
+    "founders": [],
+    "members": []
   },
 
   "mediaRoom": {
-    "awards": [
-      {
-        "title": "LUXURY RESIDENCE £10 MILLION PLUS 2022 WINNER",
-        "image": "hotel-property-award-2022.png",
-        "project": "Villa Shivnani",
-        "location": "Dubai Hills UAE",
-        "completed": "June 2021",
-        "designer": "Helen Kristina Skea",
-        "construction": "BW Interiors (Interior Fit-Out) Dubai, UAE",
-        "mep": "Wallace Whittle Ltd & John Cullen Lighting Design",
-        "links": [
-          { "label": "VIEW LINK", "url": "#" },
-          { "label": "VIEW MAGAZINE", "url": "#" }
-        ]
-      },
-      {
-        "title": "2013 SLEEP HOTEL DESIGN COMPETITION WINNER",
-        "image": "sleep-competition.jpg",
-        "project": "Sleep Hotel Guestroom Competition 2013 (Winner)",
-        "location": "London, UK",
-        "client": "Sleeper Hotel Magazine",
-        "tagline": "room revolution – all that rage...",
-        "description": "The brief was to capture the spirit of 1960's 'swinging London'. Taking inspiration from the radical art, fashion, film and music scenes that flourished during this period, generating new ideas and creating a youth phenomenon that strongly emphasized the new and the modern, a time of optimism and hedonism, a rebellion against the artistic and social norms, creating an explosive cultural revolution.\n\nInfinite's design concept reconsidered the typical hotel guestroom configuration to deliver a revolutionary guest experience through a contemporary interpretation of the sixties counterculture that questioned the political, social and moral values of the time.\n\nThe available area is split on the diagonal forming two primary asymmetric volumes which are then further divided via a series of overlapping vertical and horizontal planes shaped to facilitate their function. The detailing of these planes is intentionally simple to ensure the space remains uncluttered, a quality that is further supported by the selection of finishes. The result is a series of clean formed visually linked inter-leading areas, each with its own easily recognizable identity and function.\n\nAlthough the layout is designed to feel unrestricted, selected areas are highlighted through use of vibrant colour reminiscent of the media and symbolism of the sixties. These include a large kaleidoscopic mural, the psychedelic artwork derived from the experience of altered consciousness having been modernized into algorithmic art.\n\nThe design, the functionality and the experience of the room are complimented harnessing today's new media and technologies, with fully integrated in-room operating systems all controlled from the guest's smart phone. The aim is to create a living environment that exudes ease-of-use and exceeds the expectations of today's discerning guest.\n\nThe design, which was conceived, detailed and built in collaboration with Guttman Interiors in a period of six weeks, was announced as the Winner of the Sleep Event Competition at the Business Design Centre, London."
-      }
-    ]
+    "awards": []
   }
 }

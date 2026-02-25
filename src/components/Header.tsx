@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "Welcome" },
   { href: "/about", label: "About" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/team", label: "Team" },
-  { href: "/media-room", label: "Media Room" },
   { href: "/contact-us", label: "Contact Us" },
 ];
 
@@ -32,15 +29,18 @@ export default function Header() {
       }}
     >
       {/* Logo */}
-      <Link href="/">
-        <Image
-          src="/images/infinite-logo.png"
-          alt="Infinite Architects"
-          width={180}
-          height={107}
-          style={{ height: "60px", width: "auto" }}
-          priority
-        />
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <span
+          style={{
+            fontFamily: '"neue-haas-grotesk-display", sans-serif',
+            fontSize: "24px",
+            fontWeight: 300,
+            letterSpacing: "3px",
+            color: "#FFFFFF",
+          }}
+        >
+          LIVING<span style={{ color: "#80AE50" }}>EDGE</span>
+        </span>
       </Link>
 
       {/* Navigation */}

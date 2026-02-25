@@ -19,12 +19,12 @@ export default function ContactPage() {
               marginBottom: "30px",
             }}
           >
-            Life through Design
+            Inspired Spaces, Shaped by Vision
           </h1>
 
           {/* CTA Button */}
           <Link
-            href="mailto:russell@infinitedesigners.co"
+            href="mailto:livingedge2026@gmail.com"
             style={{
               display: "inline-block",
               padding: "15px 40px",
@@ -76,26 +76,10 @@ export default function ContactPage() {
             >
               <p style={{ margin: 0 }}>
                 <Link
-                  href="tel:+97143636306"
+                  href="mailto:livingedge2026@gmail.com"
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
-                  +971 4 3636306
-                </Link>
-              </p>
-              <p style={{ margin: 0 }}>
-                <Link
-                  href="mailto:russell@infinitedesigners.co"
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  russell@infinitedesigners.co
-                </Link>
-              </p>
-              <p style={{ margin: 0 }}>
-                <Link
-                  href="mailto:helen@infinitedesigners.co"
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  helen@infinitedesigners.co
+                  livingedge2026@gmail.com
                 </Link>
               </p>
             </div>
@@ -123,11 +107,11 @@ export default function ContactPage() {
                 lineHeight: 1.8,
               }}
             >
-              <p style={{ margin: 0 }}>Office 2601</p>
-              <p style={{ margin: 0 }}>Mazaya Business Avenue</p>
-              <p style={{ margin: 0 }}>Tower AA1, Jumeirah Lake Towers</p>
-              <p style={{ margin: 0 }}>Dubai, United Arab Emirates</p>
-              <p style={{ margin: 0 }}>PO Box 63 43 56</p>
+              <p style={{ margin: 0 }}>Suite 1, 3rd Floor</p>
+              <p style={{ margin: 0 }}>Impala House</p>
+              <p style={{ margin: 0 }}>Plot 13/15 Kimathi Avenue</p>
+              <p style={{ margin: 0 }}>Kampala, Uganda</p>
+              <p style={{ margin: 0 }}>196910 Kampala GPO</p>
             </div>
           </div>
 
@@ -147,7 +131,7 @@ export default function ContactPage() {
             <div style={{ display: "flex", gap: "15px" }}>
               {/* Instagram */}
               <Link
-                href="https://www.instagram.com/infinitedubai/"
+                href="https://www.instagram.com/livingedgeworks/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -168,7 +152,7 @@ export default function ContactPage() {
 
               {/* Facebook */}
               <Link
-                href="https://www.facebook.com/InfiniteDXB/"
+                href="https://www.facebook.com/livingedgeworks/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -190,17 +174,17 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Google Map */}
+        {/* Google Map - Kampala */}
         <div style={{ maxWidth: "90%", margin: "0 auto" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.168!2d55.1416!3d25.0764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b5402c126e3%3A0xb9511e6655c46d7c!2sInfinite%20Architects%20Interior%20Design%20Urban%20Planning!5e0!3m2!1sen!2sae!4v1708700000000!5m2!1sen!2sae"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7576107!2d32.5825!3d0.3136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc0!2sKimathi%20Avenue%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sug!4v1708700000000!5m2!1sen!2sug"
             width="100%"
             height="400"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Infinite Architects Office Location"
+            title="LivingEdge Office Location"
           />
         </div>
       </div>

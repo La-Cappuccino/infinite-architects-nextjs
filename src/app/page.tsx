@@ -119,7 +119,7 @@ export default function HomePage() {
                 margin: 0,
               }}
             >
-              Award Winning Design Studio
+              Interior Design | Construction | Furniture
             </h1>
           </div>
         </div>

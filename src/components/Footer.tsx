@@ -21,7 +21,7 @@ export default function Footer() {
           margin: 0,
         }}
       >
-        © INFINITE ARCHITECTS 2026. ALL RIGHTS RESERVED.
+        © LIVINGEDGE 2026. ALL RIGHTS RESERVED.
       </p>
     </footer>
   );

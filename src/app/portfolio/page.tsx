@@ -5,64 +5,209 @@ import PageLayout from "@/components/PageLayout";
 
 const projects = [
   {
-    title: "Private Villa Emirates Hills, Dubai",
+    title: "Contemporary Office Villa, Kampala",
     category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-01.jpg",
   },
   {
-    title: "Modular Hotel Concept, Saudi Arabia",
-    category: "ARCHITECTURE & INTERIOR DESIGN",
+    title: "Modern Residence Exterior, Kampala",
+    category: "ARCHITECTURE",
     image: "/images/portfolio/project-02.jpg",
   },
   {
-    title: "Private Villa Emirates Hills, Dubai",
-    category: "INTERIOR DESIGN",
-    image: "/images/portfolio/project-03.webp",
+    title: "Private Villa, Kampala",
+    category: "ARCHITECTURE & INTERIOR DESIGN",
+    image: "/images/portfolio/project-03.jpg",
   },
   {
-    title: "Urban Hotel, Dubai",
-    category: "INTERIOR DESIGN",
+    title: "Contemporary Home Design",
+    category: "ARCHITECTURE",
     image: "/images/portfolio/project-04.jpg",
   },
   {
-    title: "Private Villa District One, Dubai",
+    title: "Modern Villa with Balcony, Kampala",
     category: "ARCHITECTURE & INTERIOR DESIGN",
-    image: "/images/portfolio/project-05.webp",
+    image: "/images/portfolio/project-05.jpg",
   },
   {
-    title: "Private Villa Nad Al Sheba, Dubai",
-    category: "ARCHITECTURE & INTERIOR DESIGN",
+    title: "Residential Estate, Kampala",
+    category: "ARCHITECTURE",
     image: "/images/portfolio/project-06.jpg",
   },
   {
-    title: "Private Villa Dubai Hills - Award Winning",
-    category: "INTERIOR DESIGN",
+    title: "Tropical Garden Estate",
+    category: "ARCHITECTURE & LANDSCAPING",
     image: "/images/portfolio/project-07.jpg",
   },
   {
-    title: "Tamoka Restaurant Concept",
-    category: "ARCHITECTURE & INTERIOR DESIGN",
+    title: "Interior Living Space",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-08.jpg",
   },
   {
-    title: "Private Villa, Jumeirah Golf Estates, Dubai",
-    category: "ARCHITECTURE & INTERIOR DESIGN",
+    title: "Modern Interior Design",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-09.jpg",
   },
   {
-    title: "Al Bahya Palm Resort, Abu Dhabi",
-    category: "ARCHITECTURE & INTERIOR DESIGN",
+    title: "Contemporary Kitchen",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-10.jpg",
   },
   {
-    title: "Private Villa Refurbishment Emirates Hills, Dubai",
-    category: "INTERIOR DESIGN",
+    title: "Custom Cabinetry",
+    category: "FURNITURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-11.jpg",
   },
   {
-    title: "Creek Park Boutique Hotel & Serviced Apartments",
-    category: "ARCHITECTURE & INTERIOR DESIGN",
+    title: "Bedroom Suite Design",
+    category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-12.jpg",
+  },
+  {
+    title: "Living Room Remodel",
+    category: "INTERIOR DESIGN & REMODELING",
+    image: "/images/portfolio/project-13.jpg",
+  },
+  {
+    title: "Dining Area Design",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-14.jpg",
+  },
+  {
+    title: "Private Estate Entry, Kampala",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-15.jpg",
+  },
+  {
+    title: "Outdoor Living Space",
+    category: "ARCHITECTURE & LANDSCAPING",
+    image: "/images/portfolio/project-16.jpg",
+  },
+  {
+    title: "Villa Terrace Design",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-17.jpg",
+  },
+  {
+    title: "Modern Living Space",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-18.jpg",
+  },
+  {
+    title: "Bathroom Suite",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-19.jpg",
+  },
+  {
+    title: "Master Bathroom",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-20.jpg",
+  },
+  {
+    title: "Custom Furniture Design",
+    category: "FURNITURE",
+    image: "/images/portfolio/project-21.jpg",
+  },
+  {
+    title: "Home Office Space",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-22.jpg",
+  },
+  {
+    title: "Entertainment Area",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-23.jpg",
+  },
+  {
+    title: "Exterior Landscaping",
+    category: "LANDSCAPING",
+    image: "/images/portfolio/project-24.jpg",
+  },
+  {
+    title: "Luxury Walk-in Closet",
+    category: "INTERIOR DESIGN & FURNITURE",
+    image: "/images/portfolio/project-25.jpg",
+  },
+  {
+    title: "Custom Storage Solutions",
+    category: "INTERIOR DESIGN & FURNITURE",
+    image: "/images/portfolio/project-26.jpg",
+  },
+  {
+    title: "Wardrobe Design",
+    category: "FURNITURE",
+    image: "/images/portfolio/project-27.jpg",
+  },
+  {
+    title: "Outdoor Patio",
+    category: "ARCHITECTURE & LANDSCAPING",
+    image: "/images/portfolio/project-28.jpg",
+  },
+  {
+    title: "Pool Area Design",
+    category: "ARCHITECTURE & LANDSCAPING",
+    image: "/images/portfolio/project-29.jpg",
+  },
+  {
+    title: "Guest Suite",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-30.jpg",
+  },
+  {
+    title: "Villa Interior",
+    category: "INTERIOR DESIGN",
+    image: "/images/portfolio/project-31.jpg",
+  },
+  {
+    title: "Aerial View Estate, Kampala",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-32.jpg",
+  },
+  {
+    title: "Garden Pathway",
+    category: "LANDSCAPING",
+    image: "/images/portfolio/project-33.jpg",
+  },
+  {
+    title: "Entrance Design",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-34.jpg",
+  },
+  {
+    title: "Residential Complex, Kampala",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-35.jpg",
+  },
+  {
+    title: "Villa Facade",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-36.jpg",
+  },
+  {
+    title: "Outdoor Seating Area",
+    category: "LANDSCAPING",
+    image: "/images/portfolio/project-37.jpg",
+  },
+  {
+    title: "Garden Feature",
+    category: "LANDSCAPING",
+    image: "/images/portfolio/project-38.jpg",
+  },
+  {
+    title: "Estate Gardens, Kampala",
+    category: "LANDSCAPING",
+    image: "/images/portfolio/project-39.jpg",
+  },
+  {
+    title: "Driveway Design",
+    category: "ARCHITECTURE & LANDSCAPING",
+    image: "/images/portfolio/project-40.jpg",
+  },
+  {
+    title: "Property Entrance",
+    category: "ARCHITECTURE",
+    image: "/images/portfolio/project-41.jpg",
   },
 ];
 
