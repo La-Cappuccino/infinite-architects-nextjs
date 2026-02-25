@@ -244,14 +244,8 @@ export default function PortfolioPage() {
           </p>
         </div>
 
-        {/* Portfolio Grid - 3 Columns, No Gaps */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "0",
-          }}
-        >
+        {/* Portfolio Grid - Responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
+        <div className="portfolio-grid">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -281,17 +275,18 @@ export default function PortfolioPage() {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  padding: "24px",
+                  padding: "16px",
                   zIndex: 2,
                 }}
               >
                 <h3
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "20px",
+                    fontSize: "clamp(16px, 2.5vw, 20px)",
                     fontWeight: 300,
                     color: "#FFFFFF",
-                    marginBottom: "10px",
+                    marginBottom: "8px",
+                    lineHeight: 1.3,
                   }}
                 >
                   {project.title}
@@ -299,7 +294,7 @@ export default function PortfolioPage() {
                 <span
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "13px",
+                    fontSize: "clamp(10px, 1.5vw, 13px)",
                     fontWeight: 400,
                     letterSpacing: "1px",
                     textTransform: "uppercase",
@@ -313,8 +308,24 @@ export default function PortfolioPage() {
           ))}
         </div>
 
-        {/* Hover effect styles */}
+        {/* Responsive and hover styles */}
         <style jsx global>{`
+          .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2px;
+          }
+          @media (min-width: 640px) {
+            .portfolio-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+          @media (min-width: 1024px) {
+            .portfolio-grid {
+              grid-template-columns: repeat(3, 1fr);
+              gap: 0;
+            }
+          }
           .portfolio-item img {
             transition: filter 0.5s ease, transform 0.5s ease !important;
           }
