@@ -269,13 +269,27 @@ export default function PortfolioPage() {
                 sizes="33vw"
               />
 
+              {/* Gradient overlay for text readability */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "50%",
+                  background: "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
+                  zIndex: 1,
+                  pointerEvents: "none",
+                }}
+              />
+
               {/* Overlay with title */}
               <div
                 style={{
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  padding: "16px",
+                  padding: "20px",
                   zIndex: 2,
                 }}
               >
@@ -283,10 +297,11 @@ export default function PortfolioPage() {
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
                     fontSize: "clamp(16px, 2.5vw, 20px)",
-                    fontWeight: 300,
+                    fontWeight: 400,
                     color: "#FFFFFF",
                     marginBottom: "8px",
                     lineHeight: 1.3,
+                    textShadow: "0 2px 8px rgba(0,0,0,0.5)",
                   }}
                 >
                   {project.title}
@@ -295,10 +310,11 @@ export default function PortfolioPage() {
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
                     fontSize: "clamp(10px, 1.5vw, 13px)",
-                    fontWeight: 400,
-                    letterSpacing: "1px",
+                    fontWeight: 500,
+                    letterSpacing: "1.5px",
                     textTransform: "uppercase",
                     color: "#80AE50",
+                    textShadow: "0 1px 4px rgba(0,0,0,0.8)",
                   }}
                 >
                   {project.category}
