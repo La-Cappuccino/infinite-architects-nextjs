@@ -293,14 +293,7 @@ export default function HomePage() {
             margin: "0 auto",
           }}
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1.5fr",
-              gap: "80px",
-              alignItems: "start",
-            }}
-          >
+          <div className="grid-services">
             <div className="fade-in">
               <p
                 style={{
@@ -348,13 +341,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: "40px",
-              }}
-            >
+            <div className="grid-services-cards">
               {[
                 { title: "Interior", desc: "Thoughtful interiors that balance aesthetics with function" },
                 { title: "Design", desc: "Creative solutions tailored to your unique vision" },
@@ -436,13 +423,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "4px",
-            }}
-          >
+          <div className="grid-projects">
             {[
               { img: "/images/portfolio/project-05.jpg", title: "Villa with Balcony", cat: "Architecture" },
               { img: "/images/portfolio/project-25.jpg", title: "Luxury Closet", cat: "Interior" },

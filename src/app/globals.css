@@ -193,6 +193,26 @@ main, section, header, footer, div {
   will-change: transform;
 }
 
+/* Responsive grid helpers */
+.grid-services {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.grid-services-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.grid-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .fade-in, .fade-in-left, .fade-in-right {
@@ -205,19 +225,38 @@ main, section, header, footer, div {
     opacity: 1;
   }
 
-  /* Prevent ANY horizontal overflow */
+  /* Prevent horizontal overflow */
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
     max-width: 100vw !important;
   }
 
-  * {
-    max-width: 100vw;
-  }
-
   section {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+
+  /* Stack services section */
+  .grid-services {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Stack service cards */
+  .grid-services-cards {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* 2 columns for projects on tablet, 1 on phone */
+  .grid-projects {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-projects {
+    grid-template-columns: 1fr !important;
   }
 }
