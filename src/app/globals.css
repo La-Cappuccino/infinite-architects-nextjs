@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,6 +16,13 @@ body {
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal overflow on all major containers */
+main, section, header, footer, div {
+  max-width: 100vw;
 }
 
 /* Modern scrollbar */
@@ -195,5 +203,21 @@ body {
   .fade-in.visible, .fade-in-left.visible, .fade-in-right.visible {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  /* Prevent ANY horizontal overflow */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  * {
+    max-width: 100vw;
+  }
+
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
