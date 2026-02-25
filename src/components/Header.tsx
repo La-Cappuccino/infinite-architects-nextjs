@@ -182,16 +182,18 @@ export default function Header() {
         style={{
           position: "fixed",
           top: 0,
-          right: mobileMenuOpen ? 0 : "-100%",
+          right: 0,
           width: "80%",
           maxWidth: "320px",
           height: "100vh",
           backgroundColor: "#000",
           zIndex: 1000,
-          transition: "right 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+          transform: mobileMenuOpen ? "translateX(0)" : "translateX(100%)",
+          transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s",
           display: "flex",
           flexDirection: "column",
           padding: "100px 40px 40px",
+          visibility: mobileMenuOpen ? "visible" : "hidden",
         }}
       >
         {/* Navigation Links */}
