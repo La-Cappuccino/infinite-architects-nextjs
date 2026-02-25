@@ -5,27 +5,34 @@ import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
 
 export default function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [preloaderVisible, setPreloaderVisible] = useState(true);
   const [preloaderFading, setPreloaderFading] = useState(false);
 
-  useEffect(() => {
-    // Start fade out after 2 seconds
-    const fadeTimer = setTimeout(() => {
-      setPreloaderFading(true);
-    }, 2000);
+  const heroImages = [
+    "/images/portfolio/project-05.jpg",
+    "/images/portfolio/project-01.jpg",
+    "/images/portfolio/project-07.jpg",
+    "/images/portfolio/project-32.jpg",
+  ];
 
-    // Remove preloader after fade completes
-    const removeTimer = setTimeout(() => {
-      setPreloaderVisible(false);
-    }, 3000);
+  useEffect(() => {
+    // Preloader timing
+    const fadeTimer = setTimeout(() => setPreloaderFading(true), 1500);
+    const removeTimer = setTimeout(() => setPreloaderVisible(false), 2500);
+
+    // Hero slideshow
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
+      clearInterval(slideInterval);
     };
-  }, []);
+  }, [heroImages.length]);
 
-  // Click to skip preloader
   const skipPreloader = () => {
     setPreloaderFading(true);
     setTimeout(() => setPreloaderVisible(false), 500);
@@ -54,12 +61,11 @@ export default function HomePage() {
           }}
         >
           <div style={{ textAlign: "center" }}>
-            {/* Animated Logo GIF */}
             <Image
-              src="/images/infinite-logo-animated.gif"
-              alt="Loading..."
-              width={300}
-              height={169}
+              src="/images/logo-white.png"
+              alt="LivingEdge"
+              width={280}
+              height={75}
               style={{ maxWidth: "80vw", height: "auto" }}
               priority
             />
@@ -77,7 +83,32 @@ export default function HomePage() {
             overflow: "hidden",
           }}
         >
-          {/* Background Image */}
+          {/* Background Images - Slideshow */}
+          {heroImages.map((img, index) => (
+            <div
+              key={img}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                opacity: currentSlide === index ? 1 : 0,
+                transition: "opacity 1.5s ease-in-out",
+                zIndex: 1,
+              }}
+            >
+              <Image
+                src={img}
+                alt={`LivingEdge Project ${index + 1}`}
+                fill
+                style={{ objectFit: "cover" }}
+                priority={index === 0}
+              />
+            </div>
+          ))}
+
+          {/* Dark overlay for text readability */}
           <div
             style={{
               position: "absolute",
@@ -85,17 +116,10 @@ export default function HomePage() {
               left: 0,
               width: "100%",
               height: "100%",
-              zIndex: 1,
+              backgroundColor: "rgba(0,0,0,0.3)",
+              zIndex: 5,
             }}
-          >
-            <Image
-              src="/images/hero/infinite-designers-001.webp"
-              alt="Luxury villa design"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
+          />
 
           {/* Centered Text */}
           <div
@@ -103,24 +127,71 @@ export default function HomePage() {
               position: "relative",
               zIndex: 10,
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
               height: "100%",
+              textAlign: "center",
+              padding: "0 20px",
             }}
           >
+            <p
+              style={{
+                fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                fontSize: "18px",
+                fontWeight: 300,
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                color: "#80AE50",
+                marginBottom: "20px",
+              }}
+            >
+              Interior Design & Construction
+            </p>
             <h1
               style={{
                 fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                fontSize: "clamp(24px, 4vw, 48px)",
+                fontSize: "clamp(32px, 5vw, 60px)",
                 fontWeight: 200,
-                letterSpacing: "0.1em",
+                letterSpacing: "0.05em",
                 color: "#FFFFFF",
-                textAlign: "center",
                 margin: 0,
+                lineHeight: 1.2,
+                maxWidth: "900px",
               }}
             >
-              Interior Design | Construction | Furniture
+              We design inspired spaces shaped by your vision
             </h1>
+          </div>
+
+          {/* Slide indicators */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "40px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              display: "flex",
+              gap: "12px",
+              zIndex: 10,
+            }}
+          >
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                style={{
+                  width: currentSlide === index ? "30px" : "10px",
+                  height: "10px",
+                  borderRadius: "5px",
+                  backgroundColor: currentSlide === index ? "#80AE50" : "rgba(255,255,255,0.5)",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </PageLayout>

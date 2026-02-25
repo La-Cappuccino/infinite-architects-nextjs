@@ -5,7 +5,7 @@ export default function Footer() {
     <footer
       style={{
         borderTop: "2px solid #80AE50",
-        padding: "20px 0",
+        padding: "25px 0",
         textAlign: "center",
         backgroundColor: "#000000",
       }}
@@ -13,7 +13,7 @@ export default function Footer() {
       <p
         style={{
           fontFamily: '"neue-haas-grotesk-display", sans-serif',
-          fontSize: "11px",
+          fontSize: "13px",
           fontWeight: 400,
           letterSpacing: "1px",
           textTransform: "uppercase",
@@ -21,7 +21,7 @@ export default function Footer() {
           margin: 0,
         }}
       >
-        © LIVINGEDGE 2026. ALL RIGHTS RESERVED.
+        © LivingEdge 2025. All Rights Reserved.
       </p>
     </footer>
   );

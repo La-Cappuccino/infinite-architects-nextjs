@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "Welcome" },
-  { href: "/about", label: "About" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/contact-us", label: "Contact Us" },
+  { href: "/contact-us", label: "Contact" },
 ];
 
 export default function Header() {
@@ -22,29 +23,26 @@ export default function Header() {
         right: 0,
         zIndex: 1000,
         backgroundColor: "#000000",
-        padding: "15px 40px",
+        padding: "20px 50px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
       }}
     >
       {/* Logo */}
-      <Link href="/" style={{ textDecoration: "none" }}>
-        <span
-          style={{
-            fontFamily: '"neue-haas-grotesk-display", sans-serif',
-            fontSize: "24px",
-            fontWeight: 300,
-            letterSpacing: "3px",
-            color: "#FFFFFF",
-          }}
-        >
-          LIVING<span style={{ color: "#80AE50" }}>EDGE</span>
-        </span>
+      <Link href="/">
+        <Image
+          src="/images/logo-white.png"
+          alt="LivingEdge"
+          width={180}
+          height={48}
+          style={{ height: "48px", width: "auto" }}
+          priority
+        />
       </Link>
 
       {/* Navigation */}
-      <nav style={{ display: "flex", gap: "35px" }}>
+      <nav style={{ display: "flex", gap: "40px" }}>
         {navItems.map((item) => {
           const isActive = pathname === item.href;
 
@@ -54,12 +52,13 @@ export default function Header() {
               href={item.href}
               style={{
                 fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                fontSize: "13px",
+                fontSize: "15px",
                 fontWeight: 400,
                 letterSpacing: "1.5px",
                 color: isActive ? "#80AE50" : "#FFFFFF",
                 textDecoration: "none",
                 transition: "color 0.3s ease",
+                textTransform: "uppercase",
               }}
             >
               {item.label}

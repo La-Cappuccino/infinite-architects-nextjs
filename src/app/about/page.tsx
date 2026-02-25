@@ -5,170 +5,274 @@ import PageLayout from "@/components/PageLayout";
 
 const values = [
   {
-    title: "we design...",
-    text: "inspired spaces shaped by your vision, uniting architecture, function, and refined interior detail. We are a design-focused firm made up of passionate individuals committed to transforming spaces that improve the lives of those within our community. Our core values are creativity, integrity, quality, and client satisfaction.",
+    title: "About",
+    text: "LivingEdge — Interior Design & Construction. We are a design-focused firm made up of passionate individuals committed to transforming spaces that improve the lives of those within our community.",
   },
   {
-    title: "we believe...",
-    text: "in creating built environments moulded through conceptual innovation, attention to detail, and technical excellence. We have a responsibility to ensure that each of our projects enrich those who experience them and their surroundings culturally, economically and socially. Every project is an opportunity to exceed expectations.",
+    title: "Services",
+    list: ["Interior", "Design", "Production", "Furniture", "Architectural", "Remodeling"],
   },
   {
-    title: "we deliver...",
-    text: "through a collaborative approach between our clients and partners. We work closely with builders, consultants, and specialists to ensure each project runs smoothly. From concept to completion, we craft contemporary spaces focused on flow, efficiency, and timeless elegance. At every step, you remain informed, inspired, and fully involved.",
+    title: "Process",
+    text: "We work closely with builders, consultants, and other partners to make sure each project runs smoothly and the final build delivers well beyond our shared aspirations.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <PageLayout>
-      <div style={{ backgroundColor: "#000000", paddingBottom: "80px" }}>
-        {/* Page Title */}
-        <div style={{ textAlign: "center", padding: "40px 0" }}>
-          <h1
+      <div style={{ backgroundColor: "#000000", paddingBottom: "100px" }}>
+        {/* Hero Section */}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "70vh",
+            overflow: "hidden",
+          }}
+        >
+          <Image
+            src="/images/portfolio/project-05.jpg"
+            alt="LivingEdge Project"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+          <div
             style={{
-              fontFamily: '"neue-haas-grotesk-display", sans-serif',
-              fontSize: "64px",
-              fontWeight: 200,
-              letterSpacing: "0.02em",
-              color: "#FFFFFF",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0,0,0,0.4)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <span style={{ color: "#80AE50" }}>About</span> LivingEdge
-          </h1>
+            <div style={{ textAlign: "center", padding: "0 20px" }}>
+              <h1
+                style={{
+                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                  fontSize: "clamp(36px, 5vw, 72px)",
+                  fontWeight: 200,
+                  letterSpacing: "0.02em",
+                  color: "#FFFFFF",
+                  marginBottom: "20px",
+                }}
+              >
+                We design inspired spaces shaped by your vision
+              </h1>
+              <p
+                style={{
+                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                  fontSize: "20px",
+                  fontWeight: 300,
+                  color: "rgba(255,255,255,0.8)",
+                  maxWidth: "600px",
+                  margin: "0 auto",
+                }}
+              >
+                Uniting architecture, function, and refined interior detail
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Values Grid - 3 Columns */}
         <div
           style={{
-            maxWidth: "90%",
-            margin: "0 auto 60px",
+            maxWidth: "1200px",
+            margin: "60px auto",
+            padding: "0 40px",
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "0",
+            gap: "40px",
           }}
         >
           {values.map((value) => (
-            <div
-              key={value.title}
-              style={{
-                border: "1px solid rgba(255,255,255,0.2)",
-                padding: "25px",
-                backgroundColor: "transparent",
-              }}
-            >
-              <p
+            <div key={value.title}>
+              <h2
                 style={{
                   fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                  fontSize: "16px",
-                  fontWeight: 100,
-                  color: "rgba(255,255,255,0.8)",
-                  lineHeight: 1.8,
-                  margin: 0,
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.5)",
+                  marginBottom: "20px",
                 }}
               >
-                <span style={{ color: "#80AE50" }}>{value.title}</span>{" "}
-                {value.text}
-              </p>
+                {value.title}
+              </h2>
+              {value.text && (
+                <p
+                  style={{
+                    fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                    fontSize: "19px",
+                    fontWeight: 300,
+                    color: "rgba(255,255,255,0.9)",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {value.text}
+                </p>
+              )}
+              {value.list && (
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                >
+                  {value.list.map((item) => (
+                    <li
+                      key={item}
+                      style={{
+                        fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                        fontSize: "19px",
+                        fontWeight: 300,
+                        color: "#80AE50",
+                        lineHeight: 2,
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Featured Image */}
-        <div
-          style={{
-            maxWidth: "90%",
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              aspectRatio: "16/9",
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              src="/images/portfolio/project-05.jpg"
-              alt="LivingEdge Project"
-              fill
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Green Divider */}
-        <div
-          style={{
-            maxWidth: "90%",
-            margin: "40px auto",
-            height: "2px",
-            backgroundColor: "#80AE50",
-          }}
-        />
-
-        {/* Services Section */}
-        <div
-          style={{
-            maxWidth: "90%",
-            margin: "0 auto",
-          }}
-        >
+        {/* Featured Projects Section */}
+        <div style={{ maxWidth: "1200px", margin: "80px auto", padding: "0 40px" }}>
           <h2
             style={{
               fontFamily: '"neue-haas-grotesk-display", sans-serif',
-              fontSize: "32px",
-              fontWeight: 300,
-              color: "#80AE50",
-              paddingBottom: "15px",
+              fontSize: "14px",
+              fontWeight: 400,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.5)",
               marginBottom: "30px",
-              borderBottom: "2px solid #80AE50",
             }}
           >
-            Our Services
+            Our Recent Projects (2025)
           </h2>
 
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "30px",
+              gap: "20px",
             }}
           >
             {[
-              { title: "Interior Design", desc: "Creating beautiful, functional spaces that reflect your style and needs." },
-              { title: "Construction", desc: "Expert building services from foundation to finishing touches." },
-              { title: "Furniture", desc: "Custom furniture design and sourcing to complete your space." },
-              { title: "Architectural", desc: "Comprehensive architectural design for residential and commercial projects." },
-              { title: "Remodeling", desc: "Transforming existing spaces into modern, efficient environments." },
-              { title: "Production", desc: "Quality manufacturing and installation of interior elements." },
-            ].map((service) => (
-              <div key={service.title}>
-                <h3
-                  style={{
-                    fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "18px",
-                    fontWeight: 400,
-                    color: "#FFFFFF",
-                    marginBottom: "10px",
-                  }}
-                >
-                  {service.title}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "14px",
-                    fontWeight: 100,
-                    color: "rgba(255,255,255,0.7)",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {service.desc}
-                </p>
+              "/images/portfolio/project-01.jpg",
+              "/images/portfolio/project-07.jpg",
+              "/images/portfolio/project-32.jpg",
+            ].map((img, i) => (
+              <div
+                key={i}
+                style={{
+                  position: "relative",
+                  aspectRatio: "4/3",
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={img}
+                  alt={`Project ${i + 1}`}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* High-End Experience Section */}
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "100px auto",
+            padding: "0 40px",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "60px",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <h2
+              style={{
+                fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                fontSize: "clamp(32px, 4vw, 48px)",
+                fontWeight: 200,
+                color: "#FFFFFF",
+                lineHeight: 1.3,
+                marginBottom: "30px",
+              }}
+            >
+              High-End experience of indoor outdoor Interiors
+            </h2>
+          </div>
+          <div>
+            <div style={{ marginBottom: "40px" }}>
+              <h3
+                style={{
+                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.5)",
+                  marginBottom: "15px",
+                }}
+              >
+                Kitchen
+              </h3>
+              <p
+                style={{
+                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                  fontSize: "19px",
+                  fontWeight: 300,
+                  color: "rgba(255,255,255,0.8)",
+                  lineHeight: 1.8,
+                }}
+              >
+                We craft contemporary kitchen spaces focused on flow and efficiency. At every step, you remain informed, inspired, and fully involved.
+              </p>
+            </div>
+            <div>
+              <h3
+                style={{
+                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.5)",
+                  marginBottom: "15px",
+                }}
+              >
+                Simplicity
+              </h3>
+              <p
+                style={{
+                  fontFamily: '"neue-haas-grotesk-display", sans-serif',
+                  fontSize: "19px",
+                  fontWeight: 300,
+                  color: "rgba(255,255,255,0.8)",
+                  lineHeight: 1.8,
+                }}
+              >
+                We embrace clean lines and subtle textures to create interiors that feel calm, functional, and timeless.
+              </p>
+            </div>
           </div>
         </div>
       </div>

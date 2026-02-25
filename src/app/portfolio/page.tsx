@@ -5,32 +5,32 @@ import PageLayout from "@/components/PageLayout";
 
 const projects = [
   {
-    title: "Contemporary Office Villa, Kampala",
+    title: "Contemporary Villa, Kampala",
     category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-01.jpg",
   },
   {
-    title: "Modern Residence Exterior, Kampala",
+    title: "Modern Residence, Kampala",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-02.jpg",
   },
   {
-    title: "Private Villa, Kampala",
+    title: "Private Villa Design",
     category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-03.jpg",
   },
   {
-    title: "Contemporary Home Design",
+    title: "Contemporary Home",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-04.jpg",
   },
   {
-    title: "Modern Villa with Balcony, Kampala",
+    title: "Villa with Balcony, Kampala",
     category: "ARCHITECTURE & INTERIOR DESIGN",
     image: "/images/portfolio/project-05.jpg",
   },
   {
-    title: "Residential Estate, Kampala",
+    title: "Residential Estate",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-06.jpg",
   },
@@ -45,7 +45,7 @@ const projects = [
     image: "/images/portfolio/project-08.jpg",
   },
   {
-    title: "Modern Interior Design",
+    title: "Modern Interior",
     category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-09.jpg",
   },
@@ -56,36 +56,36 @@ const projects = [
   },
   {
     title: "Custom Cabinetry",
-    category: "FURNITURE & INTERIOR DESIGN",
+    category: "FURNITURE & INTERIOR",
     image: "/images/portfolio/project-11.jpg",
   },
   {
-    title: "Bedroom Suite Design",
+    title: "Bedroom Suite",
     category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-12.jpg",
   },
   {
-    title: "Living Room Remodel",
+    title: "Living Room Design",
     category: "INTERIOR DESIGN & REMODELING",
     image: "/images/portfolio/project-13.jpg",
   },
   {
-    title: "Dining Area Design",
+    title: "Dining Area",
     category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-14.jpg",
   },
   {
-    title: "Private Estate Entry, Kampala",
+    title: "Private Estate Entry",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-15.jpg",
   },
   {
-    title: "Outdoor Living Space",
+    title: "Outdoor Living",
     category: "ARCHITECTURE & LANDSCAPING",
     image: "/images/portfolio/project-16.jpg",
   },
   {
-    title: "Villa Terrace Design",
+    title: "Villa Terrace",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-17.jpg",
   },
@@ -105,12 +105,12 @@ const projects = [
     image: "/images/portfolio/project-20.jpg",
   },
   {
-    title: "Custom Furniture Design",
+    title: "Custom Furniture",
     category: "FURNITURE",
     image: "/images/portfolio/project-21.jpg",
   },
   {
-    title: "Home Office Space",
+    title: "Home Office",
     category: "INTERIOR DESIGN",
     image: "/images/portfolio/project-22.jpg",
   },
@@ -130,7 +130,7 @@ const projects = [
     image: "/images/portfolio/project-25.jpg",
   },
   {
-    title: "Custom Storage Solutions",
+    title: "Storage Solutions",
     category: "INTERIOR DESIGN & FURNITURE",
     image: "/images/portfolio/project-26.jpg",
   },
@@ -145,7 +145,7 @@ const projects = [
     image: "/images/portfolio/project-28.jpg",
   },
   {
-    title: "Pool Area Design",
+    title: "Pool Area",
     category: "ARCHITECTURE & LANDSCAPING",
     image: "/images/portfolio/project-29.jpg",
   },
@@ -160,7 +160,7 @@ const projects = [
     image: "/images/portfolio/project-31.jpg",
   },
   {
-    title: "Aerial View Estate, Kampala",
+    title: "Aerial View Estate",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-32.jpg",
   },
@@ -175,7 +175,7 @@ const projects = [
     image: "/images/portfolio/project-34.jpg",
   },
   {
-    title: "Residential Complex, Kampala",
+    title: "Residential Complex",
     category: "ARCHITECTURE",
     image: "/images/portfolio/project-35.jpg",
   },
@@ -185,7 +185,7 @@ const projects = [
     image: "/images/portfolio/project-36.jpg",
   },
   {
-    title: "Outdoor Seating Area",
+    title: "Outdoor Seating",
     category: "LANDSCAPING",
     image: "/images/portfolio/project-37.jpg",
   },
@@ -195,7 +195,7 @@ const projects = [
     image: "/images/portfolio/project-38.jpg",
   },
   {
-    title: "Estate Gardens, Kampala",
+    title: "Estate Gardens",
     category: "LANDSCAPING",
     image: "/images/portfolio/project-39.jpg",
   },
@@ -215,6 +215,35 @@ export default function PortfolioPage() {
   return (
     <PageLayout>
       <div style={{ backgroundColor: "#000000" }}>
+        {/* Page Header */}
+        <div style={{ textAlign: "center", padding: "50px 20px 40px" }}>
+          <h1
+            style={{
+              fontFamily: '"neue-haas-grotesk-display", sans-serif',
+              fontSize: "14px",
+              fontWeight: 400,
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.5)",
+              marginBottom: "15px",
+            }}
+          >
+            Our Work
+          </h1>
+          <p
+            style={{
+              fontFamily: '"neue-haas-grotesk-display", sans-serif',
+              fontSize: "clamp(28px, 4vw, 42px)",
+              fontWeight: 200,
+              color: "#FFFFFF",
+              maxWidth: "600px",
+              margin: "0 auto",
+            }}
+          >
+            Recent Projects (2025)
+          </p>
+        </div>
+
         {/* Portfolio Grid - 3 Columns, No Gaps */}
         <div
           style={{
@@ -252,17 +281,17 @@ export default function PortfolioPage() {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  padding: "20px",
+                  padding: "24px",
                   zIndex: 2,
                 }}
               >
                 <h3
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "18px",
+                    fontSize: "20px",
                     fontWeight: 300,
                     color: "#FFFFFF",
-                    marginBottom: "8px",
+                    marginBottom: "10px",
                   }}
                 >
                   {project.title}
@@ -270,7 +299,7 @@ export default function PortfolioPage() {
                 <span
                   style={{
                     fontFamily: '"neue-haas-grotesk-display", sans-serif',
-                    fontSize: "12px",
+                    fontSize: "13px",
                     fontWeight: 400,
                     letterSpacing: "1px",
                     textTransform: "uppercase",
